@@ -4,8 +4,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<!-- This is the presentation title -->
-	<title>SpinW Presentation</title>
-	<meta name="description" content="This master template contains all available slide variants" />
+	<title>Introduction to SpinW 3.1</title>
+	<meta name="description" content="Basic information about SpinW 3.1" />
 
 	<link rel="stylesheet" href="presentation_base/css/reveal.css">
 	<link rel="stylesheet" href="presentation_base/css/theme/spinw.css">
@@ -45,10 +45,18 @@
 		minScale: 1,
 		maxScale: 1,
 		history: true,
+		anything: [
+			{
+				className: "anything",
+				initialize: (function(container, options){ if (options && options.initialize) { options.initialize(container)} })
+			},
+			// ...
+		],
 		dependencies: [
-			{ src: 'presentation_base/plugin/markdown/marked.js' },
-			{ src: 'presentation_base/plugin/markdown/markdown.js' },
+			{ src: 'presentation_base/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'presentation_base/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 			{ src: 'presentation_base/plugin/menu-master/menu.js' },
+			{ src: 'presentation_base/plugin/math/math.js', async: true },
 			{ src: 'presentation_base/plugin/external/external/external.js' , condition: function() { return !!document.querySelector( '[data-external]' ); }},
 			{ src: 'presentation_base/plugin/notes/notes.js', async: true },
 			{
@@ -73,7 +81,8 @@
 				callback: function () {
 					hljs.initHighlightingOnLoad();
 				}
-			}
+			},
+			{ src: 'presentation_base/plugin/anything/anything.js' },
 		],
 
 		menu: {

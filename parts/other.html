@@ -1,90 +1,3 @@
-<section class="intro" id="intro">
-    <div class="logo-wrapper">
-        <div class="logo"><span class="visually-hidden">SpinW</span></div>
-    </div>
-</section>
-<section class="title" id="title">
-    <div class="grid-wrapper">
-        <div class="header">
-            <!-- Remove logo--full class to only show brand mark -->
-            <div class="logo logo--full"><span class="visually-hidden">SpinW</span></div>
-        </div>
-        <div class="content">
-            <h1>Introduction to SpinW 3.1</h1>
-            <div class="description">
-                This is where the description goes. Keep it short and sweet.
-            </div>
-        </div>
-        <div class="credit">
-            <hr/>
-            <div class="label">Presented By</div>
-            <div class="name">Simon Ward</div>
-            <div class="role">Scientific Software Developer - ESS</div>
-        </div>
-    </div>
-</section>
-<!--  -->
-
-<section>
-    <section class="blank color--ice" id="Section1:1">
-        <div class="grid-wrapper">
-            <div class="header">
-                <div class="logo"></div>
-                <div class="section">Section</div>
-            </div>
-            <div class="content">Content</div>
-        </div>
-    </section>
-
-    <section class="blank color--ice" id="Section1:2">
-        <div class="grid-wrapper">
-            <div class="header">
-                <div class="logo"></div>
-                <div class="section">Section</div>
-            </div>
-            <div class="content">Content</div>
-        </div>
-    </section>
-
-    <section class="blank color--ice" id="Section1:3">
-        <div class="grid-wrapper">
-            <div class="header">
-                <div class="logo"></div>
-                <div class="section">Section</div>
-            </div>
-            <div class="content">Content</div>
-        </div>
-    </section>
-
-    <section class="blank color--ice" id="Section1:4">
-        <div class="grid-wrapper">
-            <div class="header">
-                <div class="logo"></div>
-                <div class="section">Section</div>
-            </div>
-            <div class="content">Content</div>
-        </div>
-    </section>
-</section>
-
-<section class="data-markdown">
-	    <textarea data-template>
-		    ## Page title
-
-		    A paragraph with some text and a [link](http://hakim.se).
-	    </textarea>
-</section>
-
-
-<section class="blank color--dark" id="some example">
-    <div class="grid-wrapper">
-        <div class="header">
-            <div class="logo"></div>
-            <div class="section">Section</div>
-        </div>
-        <div class="content">Content</div>
-    </div>
-</section>
 
 <section class="code color--dark" id="code--path">
     <div class="grid-wrapper">
@@ -117,8 +30,8 @@ chainS.genmagstr('mode','helical','k',sym([1/2 0 0]),'nExt',[2 1 1],'n',sym([0 0
             <figcaption class="path">/src/myplanet/reveal/functions.php</figcaption>
         </figure>
         <div class="grid-wrapper" style="grid-template-columns: 1fr 1fr;">
-            <div style="text-align: center; height: auto"><img src="test.png"></div>
-            <div style="text-align: center; height: auto"><img src="test.png"></div>
+            <div style="text-align: center; height: auto"><img src="../test.png"></div>
+            <div style="text-align: center; height: auto"><img src="../test.png"></div>
         </div>
     </div>
 </section>
@@ -133,7 +46,7 @@ chainS.genmagstr('mode','helical','k',sym([1/2 0 0]),'nExt',[2 1 1],'n',sym([0 0
         <div class="content">
             <div class="profile">
                 <div class="basics">
-                    <img src="test.png">
+                    <img src="../test.png">
                     <div class="name">Some Important Image</div>
                     <div class="role">These are some more details...</div>
                 </div>
@@ -147,67 +60,8 @@ chainS.genmagstr('mode','helical','k',sym([1/2 0 0]),'nExt',[2 1 1],'n',sym([0 0
                     <p class="supplement">Front-end Developers build the user interface layer of each product, using
                         their deep knowledge of Drupal theming and use of popular front-end frameworks, including
                         Angular.js, React.js, d3.js, and of course HTML5 and CSS.</p>
-                    <figure class="code">
-                    <pre>
-                         <code class="lang-matlab">
-                             This is a code test
-                         </code>
-                    </pre>
-                    </figure>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-<section>
-    <div class="grid-wrapper">
-        <div class="header">
-            <div class="logo"></div>
-            <div class="section">Section</div>
-        </div>
-        <div class="content">
-            <text font-size="20" x="100" y="100">$ a^2 + b^2 = c^2 $</text>
-    <canvas width=500 height=500 class="anything">
-        <!--
-        {
-          "initialize": "function(container) {
-            var width = container.width,
-                height = container.height;
-            var radius = height / 2 - 5,
-                scale = radius,
-                velocity = .02;
-            var projection = d3.geo.orthographic()
-                .translate([width / 2, height / 2])
-                .scale(scale)
-                .clipAngle(90);
-            var context = container.getContext('2d');
-            var path = d3.geo.path()
-                .projection(projection)
-                .context(context);
-
-            d3.json('reveal.js-plugins/anything/d3/world-110m.json', function(error, world) {
-              if (error) throw error;
-              var land = topojson.feature(world, world.objects.land);
-              d3.timer(function(elapsed) {
-                context.clearRect(0, 0, width, height);
-                projection.rotate([velocity * elapsed, 0]);
-                context.beginPath();
-                path(land);
-                context.fillStyle = '#fff';
-                context.fill();
-                context.beginPath();
-                context.arc(width / 2, height / 2, radius, 0, 2 * Math.PI, true);
-                context.lineWidth = 2.5;
-                context.strokeStyle = '#fff';
-                context.stroke();
-              });
-            });
-            d3.select(self.frameElement).style('height', height + 'px');
-
-            }"
-        }
-        -->
-    </canvas>
         </div>
     </div>
 </section>
@@ -221,7 +75,7 @@ chainS.genmagstr('mode','helical','k',sym([1/2 0 0]),'nExt',[2 1 1],'n',sym([0 0
         <div class="content">
             <div class="profile">
                 <div class="basics">
-                    <img src="test.png">
+                    <img src="../test.png">
                     <div class="name">Some Important Image</div>
                     <div class="role">These are some more details...</div>
                 </div>
@@ -240,13 +94,11 @@ chainS.genmagstr('mode','helical','k',sym([1/2 0 0]),'nExt',[2 1 1],'n',sym([0 0
 
             <div class="profile">
                 <div class="basics">
-                    <figure class="code">
-                    <pre>
+                                        <pre>
                          <code class="lang-matlab">
-                             This is a code test
+This is a 'code' test
                          </code>
                     </pre>
-                    </figure>
                 </div>
                 <div class="details">
                     <p>Yuriy is a Front-end Developer and Solutions Architect with Myplanet, specializing in Front-end
@@ -276,7 +128,7 @@ chainS.genmagstr('mode','helical','k',sym([1/2 0 0]),'nExt',[2 1 1],'n',sym([0 0
         <div class="content">
             <div class="profile">
                 <div class="basics">
-                    <img src="test.png">
+                    <img src="../test.png">
                     <div class="name">Name</div>
                     <div class="role">Role</div>
                 </div>
@@ -295,7 +147,7 @@ chainS.genmagstr('mode','helical','k',sym([1/2 0 0]),'nExt',[2 1 1],'n',sym([0 0
             </div>
             <div class="profile">
                 <div class="basics">
-                    <img src="test.png">
+                    <img src="../test.png">
                     <div class="name">Name</div>
                     <div class="role">Role</div>
                 </div>

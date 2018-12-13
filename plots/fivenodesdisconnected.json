@@ -1,0 +1,60 @@
+﻿{
+  "nodes": [{
+    "name": "SpinW Class",
+    "width": 300,
+    "height": 100
+  },
+    {
+      "name": "Properties",
+      "width": 200,
+      "height": 80
+    },
+    {
+      "name": "Methods",
+      "width": 200,
+      "height": 80
+    },
+    {
+      "name": "External Functions",
+      "width": 450,
+      "height": 80
+    }
+  ],
+  "links": [{
+    "source": 0,
+    "target": 1
+  },
+    {
+      "source": 0,
+      "target": 2
+    }
+  ],
+  "groups": [],
+  "constraints": [{
+      "type": "alignment",
+      "axis": "y",
+      "offsets": [{
+        "node": "1",
+        "offset": "0"
+      },
+        {
+          "node": "2",
+          "offset": "0"
+        }
+      ]
+    },
+    {
+      "type": "alignment",
+      "axis": "x",
+      "offsets": [{
+        "node": "0",
+        "offset": "0"
+      },
+        {
+          "node": "3",
+          "offset": "0"
+        }
+      ]
+    }
+  ]
+}

@@ -2,22 +2,26 @@
   "nodes": [{
     "name": "SpinW Class",
     "width": 300,
-    "height": 100
+    "height": 100,
+    "sub": "Handle Class"
   },
     {
       "name": "Properties",
       "width": 200,
-      "height": 80
+      "height": 80,
+      "sub": "obj.property = value"
     },
     {
       "name": "Methods",
       "width": 200,
-      "height": 80
+      "height": 80,
+      "sub": "obj.method(varargin)"
     },
     {
       "name": "External Functions",
       "width": 450,
-      "height": 80
+      "height": 80,
+      "sub": "sw_funcName(varargin)"
     }
   ],
   "links": [{

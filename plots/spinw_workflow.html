@@ -37,6 +37,7 @@
             font-size: 25px;
             text-anchor: middle;
             cursor: move;
+        }
 
         /* Make the chart container fill the page using CSS. */
         .chart {
@@ -55,7 +56,6 @@
 
 <script>
         var chartDiv = document.getElementById("chart");
-        var width = chartDiv.clientWidth;
 
         var body = document.body,
             html = document.documentElement;
@@ -78,7 +78,7 @@
             .attr("width", width)
             .attr("height", height);
 
-        d3.json("fivenodesdisconnected.json", function (error, graph) {
+        d3.json("codeLayout.json", function (error, graph) {
             cola
                 .nodes(graph.nodes)
                 .links(graph.links)
@@ -102,6 +102,7 @@
                 .attr("class", "link");
 
             var pad = 20;
+
             var node = svg.selectAll(".node")
                 .data(graph.nodes)
                 .enter().append("rect")

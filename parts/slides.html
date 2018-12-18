@@ -1,10 +1,20 @@
-<section class="blank" id="myslide1">
+<!--<section class="blank" id="myslide1">-->
+    <!--<div class="grid-wrapper">-->
+        <!--<div class="header">-->
+            <!--<div class="logo"></div>-->
+            <!--<div class="section"> About SpinW </div>-->
+        <!--</div>-->
+            <!--<iframe data-src="demo_iframe.html" name="iframe_a" frameborder="0" style="overflow:hidden;height=100%;width=100%" height="100%" width="100%"></iframe>-->
+    <!--</div>-->
+<!--</section>-->
+
+<section class="blank" id="myslid2">
     <div class="grid-wrapper">
         <div class="header">
             <div class="logo"></div>
-            <div class="section"> About SpinW </div>
+            <div class="section"> SpinW Class </div>
         </div>
-            <iframe data-src="demo_iframe.html" name="iframe_a" frameborder="0" style="overflow:hidden;height=100%;width=100%" height="100%" width="100%"></iframe>
+        <iframe data-src="plots/spinw_workflow.html" name="iframe_a" frameborder="0" height="100%" width="100%"></iframe>
     </div>
 </section>
 
@@ -12,8 +22,827 @@
     <div class="grid-wrapper">
         <div class="header">
             <div class="logo"></div>
-            <div class="section"> About SpinW </div>
+            <div class="section"> SpinW Class </div>
         </div>
         <iframe data-src="plots/spinw_workflow.html" name="iframe_a" frameborder="0" height="100%" width="100%"></iframe>
+    </div>
+</section>
+
+<section class="blank" id="sw_properties">
+    <style>
+        .limiter {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .wrap-table100 {
+            width: 100%;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        table {
+            border-spacing: 1;
+            border-collapse: collapse;
+            background: #F8F8F8;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+        }
+        table * {
+            position: relative;
+        }
+        table td, table th {
+            padding-left: 8px;
+        }
+        table thead tr {
+            height: 60px;
+            background: #36304a;
+        }
+        table tbody tr {
+            height: 50px;
+        }
+        table tbody tr:last-child {
+            border: 0;
+            border-right: none;
+        }
+        table tbody td:last-child {
+            border-right: none;
+        }
+        table td, table th {
+            text-align: left;
+        }
+        table td.l, table th.l {
+            text-align: right;
+        }
+        table td.c, table th.c {
+            text-align: center;
+        }
+        table td.r, table th.r {
+            text-align: center;
+        }
+
+
+        .table100-head th{
+            color: #fff;
+            line-height: 1.2;
+            font-weight: unset;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #E8E8E8;
+        }
+
+        tbody tr {
+            color: #606060;
+            line-height: 1.2;
+            font-weight: unset;
+        }
+
+        tbody tr:hover {
+            color: #555555;
+            background-color: #f5f5f5;
+            cursor: pointer;
+
+        }
+
+        .lastcolumn {
+            text-align: right;
+        }
+        @media screen and (max-width: 640px) {
+            table {
+                overflow-x: auto;
+                display: block;
+            }
+        }
+
+        @media screen and (max-width: 992px) {
+            table {
+                display: block;
+            }
+            table > *, table tr, table td, table th {
+                display: block;
+            }
+            table thead {
+                display: none;
+            }
+            table tbody tr {
+                height: auto;
+                padding: 37px 0;
+            }
+            table tbody tr td {
+                padding-left: 40% !important;
+                margin-bottom: 24px;
+            }
+            table tbody tr td:last-child {
+                margin-bottom: 0;
+            }
+            table tbody tr td:before {
+                font-family: OpenSans-Regular;
+                font-size: 14px;
+                color: #999999;
+                line-height: 1.2;
+                font-weight: unset;
+                position: absolute;
+                width: 40%;
+                left: 30px;
+                top: 0;
+            }
+
+            tbody tr {
+                font-size: 14px;
+            }
+        }
+    </style>
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section"> spinw properties >>properties(spinw) </div>
+        </div>
+        <content>
+                <div class="wrap-table100">
+                    <div class="table100">
+            <table>
+                <thead>
+                <tr class="table100-head">
+                    <th><code>lattice</code></th>
+                    <th><code>unit_cell</code></th>
+                    <th><code>matrix</code></th>
+                    <th><code>sinlge_ion</code></th>
+                    <th><code>coupling</code></th>
+                    <th><code>mag_str</code></th>
+                    <th><code>unit</code></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>angle</td>
+                    <td>r</td>
+                    <td>mat</td>
+                    <td>aniso</td>
+                    <td>dl</td>
+                    <td>F</td>
+                    <td class="lastcolumn">kB</td>
+                </tr>
+                <tr>
+                    <td>lat_const</td>
+                    <td>S</td>
+                    <td>label</td>
+                    <td>g</td>
+                    <td>atom1</td>
+                    <td>k</td>
+                    <td class="lastcolumn">muB</td>
+                </tr>
+                <tr>
+                    <td>sym</td>
+                    <td>label</td>
+                    <td></td>
+                    <td>field</td>
+                    <td>atom2</td>
+                    <td>nExt</td>
+                    <td class="lastcolumn">mu0</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>ff</td>
+                    <td></td>
+                    <td>T</td>
+                    <td>mat_idx</td>
+                    <td></td>
+                    <td class="lastcolumn">label</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>idx</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+                    </div>
+                </div>
+            
+            <p>Example:</p>
+            
+            <figure class="code">
+                <pre>
+                <code class="lang-matlab" style="line-height: 0.25rem; overflow: hidden;">
+obj.lattice.lat_const = [3 3 4];
+                </code>
+                </pre>
+            </figure>
+            Functions:
+            <figure class="code">
+                <pre>
+                <code class="lang-matlab" style="line-height: 0.25rem; overflow: hidden;">
+obj.genlattice('lat_const',[3 3 4], 'sym', 1,'angled',[90 90 120]);
+                </code>
+                </pre>
+            </figure>
+            Matrix dimensions convention:<br>
+            <b>the changing/larger dimensions are at the highest index: (1, 3), (3, <code>nAtom</code>)</b>
+        </content>
+    </div>
+</section>
+
+<section class="showit" id="co-ordSystem">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section"> Coordinate systems </div>
+        </div>
+        <content>
+            Most of the data stored in the fields of SpinW has a coordinate system. There are 3 coordinate systems.
+            <div class="profile">
+                <div class="basics">
+                    <img src="../test.png">
+                    <div class="name">Some Important Image</div>
+                    <div class="role">These are some more details...</div>
+                </div>
+                <div class="details">
+                    <p>
+                    <h2>Lattice unit (lu):</h2>
+                    <ul>
+                        <li>defined by the unit cell: (a, b, c, α, β, γ)</li>
+                        <li>atomic position</li>
+                    </ul>
+                    <br>
+
+                    <h2>Reciprocal lattice unit (rlu):</h2>
+                    <ul>
+                        <li>momentum transfer</li>
+                        <li>magnetic propagation vector(s)</li>
+                    </ul>
+                    <br>
+
+                    <h2>xyz Descartes coordinate system:</h2>
+                    <ul>
+                        <li>momentum transfer in Å -1 unit</li>
+                        <li>magnetic field</li>
+                        <li>magnetic moments</li>
+                        <li>J, A, g matrices</li>
+                        <li>components of the spin-spin correlation function</li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </content>
+    </div>
+</section>
+
+<section class="blank" id="transformations">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section"> SpinW Class </div>
+        </div>
+        <content>
+        <p>We have three types of tensor variable: <b>polar vector, axial vector, 2d tensors.</b></p>
+            <p>The respective transformation rules using orthogonal matrices are:</p>
+            \[\begin{aligned}
+            \nu^{'} &amp; = R\nu \\
+            \nu^{'} &amp; = \det(R)R\nu \\
+            T^{'} &amp; = RTR^{T}
+            \end{aligned} \]
+            <p>Where $\nu$ is a column vector.</p>
+            <p>To generate transformation matrices use:</p>
+            Rotation:
+            <figure class="code">
+                <pre>
+                <code class="lang-matlab" style="line-height: 0.25rem; overflow: hidden;">
+R = sw_rotmat(rotAxis, rotAngle);
+                </code>
+                </pre>
+            </figure>
+            Mirroring:
+            <figure class="code">
+                <pre>
+                <code class="lang-matlab" style="line-height: 0.25rem; overflow: hidden;">
+[~, R] = sw_mirror(normalAxis);
+                </code>
+                </pre>
+            </figure>
+        </content>
+    </div>
+</section>
+
+<section class="blank" id="unit_cell">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section"> Unit cell </div>
+        </div>
+        <content>
+
+            <p>The crystal lattice information is stored in <b><code>spinw.lattice</code></b> , to define the parameters use:</p>
+
+            <ul>
+                <li><code>spinw.genlattice()</code> with options: <code>lat_const, angle, angled, sym</code></li>
+                <li>sym option accept name of space group or symmetry operators in matrix</li>
+            </ul>
+
+            <p>The symmetry inequivalent atoms are stored in <b><code>spinw.unit_cell</code></b> with following parameters:</p>
+
+            <ul>
+                <li>position in lattice units in <b>r</b></li>
+                <li>spin quantum number in <b>S</b></li>
+                <li>string <b>label</b> with magnetic form factor definition (FullProf convention, e.g. MCr3 for Cr$^{3+}$ ions)
+                </li>
+                <li><b>color</b> for plotting (RGB code for each atom)</li>
+            </ul>
+
+            <h4><br>To define the atoms use:</h4>
+
+            <ul>
+                <li><code>spinw.addatom()</code> function with options as above</li>
+                <li>function checks the validity of the input and has default values (e.g. S can be generated from the
+                    label)
+                </li>
+                <li>defines magnetic form factor</li>
+            </ul>
+        </content>
+    </div>
+</section>
+
+<section class="blank" id="mag_lattice_sym">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section"> Magnetic lattice from symmetry </div>
+        </div>
+        <content>
+
+            <p>Magnetic lattice is dynamically generated from:</p>
+
+            <ul>
+                <li>unit cell parameters (a, b, c, angles) stored in <code>spinw.lattice</code></li>
+                <li>magnetic atoms (S>0) stored in <code>spinw.unit_cell</code></li>
+                <li>space group stored in <code>spinw.lattice.sym</code></li>
+            </ul>
+
+            <p>The function <code>M = <b>spinw.matom()</b></code> generates the positions:</p>
+
+            <ul>
+                <li>we call the number of magnetic atoms in the unit cell: <code>nMagAtom</code></li>
+                <li>position in l.u. in <code>M.r</code></li>
+                <li>index pointing to the atom in <code>spinw.unit_cell</code> stored in <code>M.idx</code></li>
+                <li>spin quantum number stored in <code>M.S</code></li>
+            </ul>
+
+            <p>
+                The space group generators are stored in the <code>symmetry.dat</code> file, and <code>spinw.lattice.sym</code> stores
+                all symmetry operators of the space group<br>
+            </p>
+            <code style="font-size:0.75rem">
+                <p style="line-height:0.25rem">204 I m -3 : x+1/2,y+1/2,z+1/2; -x,-y,z; -x,y,-z; z,x,y; -x,-y,-z</p>
+                <p style="line-height:0.75rem; background-color:#EEEDEF ">205 P a -3 : -x+1/2,-y,z+1/2; -x,y+1/2,-z+1/2; z,x,y; -x,-y,-z</p>
+                <p style="line-height:0.25rem">206 I a -3 : x+1/2,y+1/2,z+1/2; -x+1/2,-y,z+1/2; -x,y+1/2,-z+1/2; z,x,y; -x,-y,-z</p>
+            </code>
+
+            <p><br>
+                The first <code>nMagAtom</code> magnetic moment directions stored in <code>spinw.mag_str.S</code> are corresponding to
+                the magnetic lattice generated by <code>spinw.matom()</code>.
+            </p>
+        </content>
+    </div>
+</section>
+
+<section class="blank" id="spacegroups">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">Space groups</div>
+        </div>
+        <content>
+
+            <p>The generators of the 230 space group with standard settings are stored in <code>symmetry.dat</code>.</p>
+
+            <ul>
+                <li>to add a new setting or permute axes, use <br>
+                    <code>sym = swsym.add(symStr, {symName})</code></li>
+                <li>use the line number in <code>spinw.lattice.sym</code></li>
+                <li>P0 $\neq$ P1</li>
+            </ul>
+
+            <br>
+            <h4><br>The space group is used:</h4>
+
+            <ul>
+                <li>generate the atomic positions $\rightarrow$ ALWAYS</li>
+                <li>determines equivalent bonds</li>
+                <li>allowed terms in the magnetic Hamiltonian</li>
+                <li>magnetic structure? Not yet</li>
+            </ul>
+            <p>If symmetry is off for bonds, the equivalent bonds will be generated based on length.</p>
+
+            <h4>
+                Reduce symmetry:
+            </h4>
+            <ul>
+                <li><code>spinw.no_sym()</code> removes all symmetries $\rightarrow$ P0 and repopulates <code>spinw.unit_cell</code> with all the
+                    originally generated positions.</li>
+                <li><code>{T} = spinw.newcell(bvect, {bshift})</code> creates a new unit cell and reduce the symmetry
+                    to P0 and return the transformation matrix: <code>Qrlu_new = T * Qrlu_old</code></li>
+            </ul>
+        </content>
+    </div>
+</section>
+
+<section class="blank" id="matrices">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">Matrices</div>
+        </div>
+        <content>
+
+            <h4>3x3 matrices can be stored in the <code>spinw.matrix</code> field:</h4>
+
+            <ul>
+                <li>values are stored in a <b><code>3x3xnMat</code></b> matrix (mat subfield)</li>
+                <li>label and color stores corresponding label and color for plotting</li>
+            </ul>
+
+            <p><b>These matrices are really just numbers.</b> They will be part of the Hamiltonian once they are assigned
+                to a single ion anisotropy, g-tensor or exchange coupling.</p>
+
+            <h4><br>To add new matrix use <code>spinw.addmatrix()</code>. </h4>
+                <p>The matrix value is given in the <code>mat</code> option:</p>
+            <ul>
+                <li>single number gives Heisenberg interaction, e.g. <code>mat = J1</code></li>
+                <li>vector gives a Dzyaloshinskii-Moriya interaction, e.g. <code>mat = [D1 0 D2]</code></li>
+                <li>generall accept 3x3 matrices, e.g. <code>mat = diag([Jxy Jxy Jz])</code></li>
+            </ul>
+
+            <p>Each matrix can be referenced by its index (e.g. <code>mat(:,:,idx)</code>) or by ist label (e.g.
+                <code>J1</code>).</p>
+        </content>
+    </div>
+</section>
+
+<section class="blank" id="bonds">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">Bonds</div>
+        </div>
+        <content>
+
+            <h4>Bonds are stored in <b><code>spinw.coupling</code></b> field:</h4>
+
+            <ul>
+                <li>each bond is defined by the index of 2 interacting magnetic atoms of the magnetic lattice...</li>
+                <li>... and a translation vector in lattice units (dl)</li>
+                <li>the bond has a direction: <code>matom.r(:,atom1)</code> $\rightarrow$ <code>matom.r(:,atom2) + dl</code></li>
+                <li>each bond has an increasing index (<code>idx</code>), starting with 1</li>
+                <li>equivalent bonds have the same index</li>
+                <li>each bond can have a pointer to 3 different matrices that define the J value (<code>mat_idx</code>)</li>
+            </ul>
+
+            <p>The bonds are generated from the magnetic lattice and the space group (if any) using the
+                <b><code>spinw.gencoupling()</code></b> method:</p>
+            <ul>
+                <li><code>maxDistance</code> option determines the maximum bond length that will be generated</li>
+                <li>can generate up $10^6$ bonds/s, can be used for very large unit cell for dipole-dipole interaction</li>
+            </ul>
+
+            <h4>To assign a matrix to a bond use <b><code>spinw.addcoupling()</code></b>:</h4>
+            <ul>
+                <li>assigned matrix is given by a matrix label or index (option <code>mat</code>)</li>
+                <li>bond can be given by an index (option <code>bond</code>)</li>
+                <li>sub indices can be also given (option <code>subIdx</code>)</li>
+            </ul>
+        </content>
+    </div>
+</section>
+
+<section class="showit" id="gencouplings1">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section"> spinw.gencoupling() </div>
+        </div>
+        <content>
+            <p>GENerates COUPLINGs</p>
+            <div class="profile">
+                <div class="basics">
+                    <img src="../test.png">
+                    <div class="name">Some Important Image</div>
+                    <div class="role">These are some more details...</div>
+                </div>
+                <div class="details">
+                    <p>
+                    <ul>
+                        <li>all inter-ion distances are calculated within a fixed radius</li>
+                        <li>couplings are sorted by <b>length</b></li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </content>
+    </div>
+</section>
+
+<section class="showit" id="gencouplings2">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section"> spinw.gencoupling() </div>
+        </div>
+        <content>
+            <p>GENerates COUPLINGs</p>
+            <div class="profile">
+                <div class="basics">
+                    <img src="../test.png">
+                    <div class="name">Some Important Image</div>
+                    <div class="role">These are some more details...</div>
+                </div>
+                <div class="details">
+                    <p>
+                    <ul>
+                        <li>all inter-ion distances are calculated within a fixed radius</li>
+                        <li>couplings are sorted by <b>length</b></li>
+                    </ul>
+                    </p>
+                    <div class="wrap-table100">
+                        <div class="table100">
+                            <table>
+                                <thead>
+                                <tr class="table100-head">
+                                    <th colspan="8" style="text-align: center;"><code>obj.coupling</code></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td style="border-right: 1px solid #606060"><code>dl(1,:)</code></td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>1</td>
+                                    <td>...</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-right: 1px solid #606060"><code>dl(2,:)</code></td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>-1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>...</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-right: 1px solid #606060"><code>dl(3,:)</code></td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>...</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-right: 1px solid #606060"><code>atom1</code></td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>...</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-right: 1px solid #606060"><code>atom2</code></td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>...</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-right: 1px solid #606060"><code>mat_idx(1,:)</code></td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>...</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-right: 1px solid #606060"><code>mat_idx(2,:)</code></td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>...</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-right: 1px solid #606060"><code>mat_idx(3,:)</code></td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>...</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-right: 1px solid #606060"><code>idx</code></td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>3</td>
+                                    <td>...</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </content>
+    </div>
+</section>
+
+<section class="showit" id="gencouplings3">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section"> spinw.gencoupling() </div>
+        </div>
+        <content>
+            <p>GENerates COUPLINGs</p>
+            <div class="profile">
+                <div class="basics">
+                    <img src="../test.png">
+                    <div class="name">Some Important Image</div>
+                    <div class="role">These are some more details...</div>
+                    <div class="wrap-table100">
+                        <div class="table100">
+                            <table>
+                                <thead>
+                                <tr class="table100-head">
+                                    <th colspan="4" style="text-align: center;"><code>obj.matrix</code></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td style="border-right: 1px solid #606060"><code>mat(1,:,1)</code></td>
+                                    <td style="background-color: #E8E8E8;">1</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                </tr>
+
+                                <tr style="background-color: #f5f5f5;">
+                                    <td style="border-right: 1px solid #606060"><code>mat(2,:,1)</code></td>
+                                    <td>0</td>
+                                    <td style="background-color: #E8E8E8;">1</td>
+                                    <td>0</td>
+                                </tr>
+
+                                <tr>
+                                    <td style="border-right: 1px solid #606060"><code>mat(3,:,1)</code></td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td style="background-color: #E8E8E8;">1</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="details">
+                    <p>
+                    <ul>
+                        <li>all inter-ion distances are calculated within a fixed radius</li>
+                        <li>couplings are sorted by <b>length</b></li>
+                    </ul>
+                    </p>
+                    <div class="wrap-table100">
+                        <div class="table100">
+                            <table>
+                                <thead>
+                                <tr class="table100-head">
+                                    <th colspan="8" style="text-align: center;"><code>obj.coupling</code></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td style="border-right: 1px solid #606060"><code>dl(1,:)</code></td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>1</td>
+                                    <td>...</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-right: 1px solid #606060"><code>dl(2,:)</code></td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>-1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>...</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-right: 1px solid #606060"><code>dl(3,:)</code></td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>...</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-right: 1px solid #606060"><code>atom1</code></td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>...</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-right: 1px solid #606060"><code>atom2</code></td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>...</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-right: 1px solid #606060"><code>mat_idx(1,:)</code></td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>...</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-right: 1px solid #606060"><code>mat_idx(2,:)</code></td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>...</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-right: 1px solid #606060"><code>mat_idx(3,:)</code></td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>...</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-right: 1px solid #606060"><code>idx</code></td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>3</td>
+                                    <td>...</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </content>
     </div>
 </section>

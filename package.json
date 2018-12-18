@@ -1,0 +1,10 @@
+{
+  "name": "Intro2SpinW_Presentation",
+  "version": "1.0.0",
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+    "mathjax": "latest"
+  }
+}

@@ -119,6 +119,16 @@
                 })
                 .call(cola.drag);
 
+            node.append("text")
+                .data(graph.nodes[0])
+                .attr("x", function(d) { return x(d); })
+                .attr("y", function(d) { return y(d); })
+                .attr("dy", ".35em")
+                .text(function(d) {
+                    return "test"; }
+                    )
+                .call(cola.drag);
+
             var label = svg.selectAll(".label")
                 .data(graph.nodes)
                 .enter().append("text")
@@ -176,6 +186,31 @@
                     });
             });
         });
+
+
+        function wrap(text, width) {
+            text.each(function() {
+                var text = d3.select(this),
+                    words = text.text().split(/\s+/).reverse(),
+                    word,
+                    line = [],
+                    lineNumber = 0,
+                    lineHeight = 1.1, // ems
+                    y = text.attr("y"),
+                    dy = parseFloat(text.attr("dy")),
+                    tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
+                while (word = words.pop()) {
+                    line.push(word);
+                    tspan.text(line.join(" "));
+                    if (tspan.node().getComputedTextLength() > width) {
+                        line.pop();
+                        tspan.text(line.join(" "));
+                        line = [word];
+                        tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+                    }
+                }
+            });
+        }
 </script>
 </body>
 </html>

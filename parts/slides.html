@@ -256,7 +256,7 @@ obj.genlattice('lat_const',[3 3 4], 'sym', 1,'angled',[90 90 120]);
     </div>
 </section>
 
-<section class="showit" id="co-ordSystem">
+<section class="team" id="co-ordSystem">
     <div class="grid-wrapper">
         <div class="header">
             <div class="logo"></div>
@@ -266,27 +266,24 @@ obj.genlattice('lat_const',[3 3 4], 'sym', 1,'angled',[90 90 120]);
             Most of the data stored in the fields of SpinW has a coordinate system. There are 3 coordinate systems.
             <div class="profile">
                 <div class="basics">
-                    <img src="../test.png">
-                    <div class="name">Some Important Image</div>
-                    <div class="role">These are some more details...</div>
+                    <img src="plots/coOrd.svg"/>
+                    <!--<div class="name">Some Important Image</div>-->
+                    <!--<div class="role">These are some more details...</div>-->
                 </div>
                 <div class="details">
+                    <div>
                     <p>
                     <h2>Lattice unit (lu):</h2>
                     <ul>
                         <li>defined by the unit cell: (a, b, c, α, β, γ)</li>
                         <li>atomic position</li>
                     </ul>
-                    <br>
-
-                    <h2>Reciprocal lattice unit (rlu):</h2>
+                    <h2><br>Reciprocal lattice unit (rlu):</h2>
                     <ul>
                         <li>momentum transfer</li>
                         <li>magnetic propagation vector(s)</li>
                     </ul>
-                    <br>
-
-                    <h2>xyz Descartes coordinate system:</h2>
+                    <h2><br>xyz Descartes coordinate system:</h2>
                     <ul>
                         <li>momentum transfer in Å -1 unit</li>
                         <li>magnetic field</li>
@@ -295,6 +292,7 @@ obj.genlattice('lat_const',[3 3 4], 'sym', 1,'angled',[90 90 120]);
                         <li>components of the spin-spin correlation function</li>
                     </ul>
                     </p>
+                    </div>
                 </div>
             </div>
         </content>
@@ -534,14 +532,14 @@ R = sw_rotmat(rotAxis, rotAngle);
             <div class="section"> spinw.gencoupling() </div>
         </div>
         <content>
-            <p>GENerates COUPLINGs</p>
             <div class="profile">
                 <div class="basics">
-                    <img src="../test.png">
-                    <div class="name">Some Important Image</div>
-                    <div class="role">These are some more details...</div>
+                    <img src="plots/lattice.svg" />
+                    <!--<div class="name">Some Important Image</div>-->
+                    <!--<div class="role">These are some more details...</div>-->
                 </div>
                 <div class="details">
+                    <p>GENerates COUPLINGs</p>
                     <p>
                     <ul>
                         <li>all inter-ion distances are calculated within a fixed radius</li>
@@ -561,14 +559,14 @@ R = sw_rotmat(rotAxis, rotAngle);
             <div class="section"> spinw.gencoupling() </div>
         </div>
         <content>
-            <p>GENerates COUPLINGs</p>
             <div class="profile">
                 <div class="basics">
-                    <img src="../test.png">
-                    <div class="name">Some Important Image</div>
-                    <div class="role">These are some more details...</div>
+                    <img src="plots/lattice.svg" width="75%"/>
+                    <!--<div class="name">Some Important Image</div>-->
+                    <!--<div class="role">These are some more details...</div>-->
                 </div>
                 <div class="details">
+                    <p>GENerates COUPLINGs</p>
                     <p>
                     <ul>
                         <li>all inter-ion distances are calculated within a fixed radius</li>
@@ -691,12 +689,12 @@ R = sw_rotmat(rotAxis, rotAngle);
             <div class="section"> spinw.gencoupling() </div>
         </div>
         <content>
-            <p>GENerates COUPLINGs</p>
             <div class="profile">
                 <div class="basics">
-                    <img src="../test.png">
-                    <div class="name">Some Important Image</div>
-                    <div class="role">These are some more details...</div>
+                        <img src="plots/lattice.svg" width="75%"/>
+                        <!--<div class="name">Some Important Image</div>-->
+                    <!--<div class="role">These are some more details...</div>-->
+
                     <div class="wrap-table100">
                         <div class="table100">
                             <table>
@@ -732,11 +730,13 @@ R = sw_rotmat(rotAxis, rotAngle);
                     </div>
                 </div>
                 <div class="details">
+                    <p>GENerates COUPLINGs</p>
                     <p>
                     <ul>
                         <li>all inter-ion distances are calculated within a fixed radius</li>
                         <li>couplings are sorted by <b>length</b></li>
-                    </ul>
+                    <li>after <code>spinw.gencoupling()</code>:</li>
+                </ul>
                     </p>
                     <div class="wrap-table100">
                         <div class="table100">
@@ -843,6 +843,957 @@ R = sw_rotmat(rotAxis, rotAngle);
                     </div>
                 </div>
             </div>
+        </content>
+    </div>
+</section>
+
+
+
+
+<section class="showit" id="gencouplings4">
+
+    <style>
+        #container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        #navi,
+        #infoi {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #infoi {
+            z-index: 10;
+            top: 50px;
+            left: 50px;
+        }
+    </style>
+
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section"> spinw.gencoupling() </div>
+        </div>
+        <content>
+            <div class="profile">
+                <div class="basics">
+                    <img src="plots/lattice.svg" width="75%"/>
+                    <!--<div class="name">Some Important Image</div>-->
+                    <!--<div class="role">These are some more details...</div>-->
+                    <div id="container">
+                        <div id="navi" style="opacity: 0.5;">
+                    <div class="wrap-table100">
+                        <div class="table100">
+                            <table>
+                                <thead>
+                                <tr class="table100-head">
+                                    <th colspan="4" style="text-align: center;"><code>obj.matrix</code></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td style="border-right: 1px solid #606060"><code>mat(1,:,1)</code></td>
+                                    <td style="background-color: #E8E8E8;">1</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                </tr>
+
+                                <tr style="background-color: #f5f5f5;">
+                                    <td style="border-right: 1px solid #606060"><code>mat(2,:,1)</code></td>
+                                    <td>0</td>
+                                    <td style="background-color: #E8E8E8;">1</td>
+                                    <td>0</td>
+                                </tr>
+
+                                <tr>
+                                    <td style="border-right: 1px solid #606060"><code>mat(3,:,1)</code></td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td style="background-color: #E8E8E8;">1</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                        </div>
+                        <div id="infoi">
+                    <div class="wrap-table100" style="z-index: 1;position: absolute;top: -25px;">
+                        <div class="table100">
+                            <table>
+                                <thead>
+                                <tr class="table100-head">
+                                    <th colspan="4" style="text-align: center;"><code>obj.matrix</code></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td style="border-right: 1px solid #606060"><code>mat(1,:,1)</code></td>
+                                    <td style="background-color: #E8E8E8;">1</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                </tr>
+
+                                <tr style="background-color: #f5f5f5;">
+                                    <td style="border-right: 1px solid #606060"><code>mat(2,:,1)</code></td>
+                                    <td>0</td>
+                                    <td style="background-color: #E8E8E8;">1</td>
+                                    <td>0</td>
+                                </tr>
+
+                                <tr>
+                                    <td style="border-right: 1px solid #606060"><code>mat(3,:,1)</code></td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td style="background-color: #E8E8E8;">1</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+                </div>
+                <div class="details">
+                    <p>GENerates COUPLINGs</p>
+                    <p>
+                    <ul>
+                        <li>all inter-ion distances are calculated within a fixed radius</li>
+                        <li>couplings are sorted by <b>length</b></li>
+                        <li>after <code>spinw.gencoupling()</code>:</li>
+                    </ul>
+                    </p>
+                    <div class="wrap-table100">
+                        <div class="table100">
+                            <table>
+                                <thead>
+                                <tr class="table100-head">
+                                    <th colspan="8" style="text-align: center;"><code>obj.coupling</code></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td style="border-right: 1px solid #606060"><code>dl(1,:)</code></td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>1</td>
+                                    <td>...</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-right: 1px solid #606060"><code>dl(2,:)</code></td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>-1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>...</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-right: 1px solid #606060"><code>dl(3,:)</code></td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>...</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-right: 1px solid #606060"><code>atom1</code></td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>...</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-right: 1px solid #606060"><code>atom2</code></td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>...</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-right: 1px solid #606060"><code>mat_idx(1,:)</code></td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>...</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-right: 1px solid #606060"><code>mat_idx(2,:)</code></td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>...</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-right: 1px solid #606060"><code>mat_idx(3,:)</code></td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>...</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-right: 1px solid #606060"><code>idx</code></td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>3</td>
+                                    <td>...</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <code>sw.addcoupling('mat','J1','bond',idx)</code>
+                </div>
+            </div>
+        </content>
+    </div>
+</section>
+
+<section class="blank" id="single_ion">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">Single ion properties</div>
+        </div>
+        <content>
+
+            <h4>Single ion, g-tensor and external field values are stored in <code>spinw.single_ion</code>.</h4>
+
+            Subfields:
+
+            <ul>
+                <li>single ion anisotropy is stored for <code>nMagAtom</code> with a pointer to a matrix in aniso</li>
+                <li>g-tensor is <code>nMagAtom</code> is stored in g</li>
+                <li>field is stored as a row vector</li>
+            </ul>
+
+            <p>
+                To assign anisotropy use <b><code>spinw.addaniso(matLabel,{atomIdx})</code></b>
+                with matrix label and optional atom indices of labels.
+            </p>
+            <p>
+                Similar function <code>spinw.addg()</code>.
+            </p>
+        </content>
+    </div>
+</section>
+
+<section class="blank" id="magStr">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">Magnetic structure</div>
+        </div>
+        <content>
+
+            <h4>Magnetic structure is stored in the <b><code>spinw.mag_str field</code></b>.</h4>
+            <p>It can store arbitrary magnetic structures using Fourier components.</p>
+            <p>Subfields:</p>
+
+            <ul>
+                <li>magnetic supercell in l.u. stored in <b><code>nExt</code></b></li>
+                <li>k-vector(s) stored in <b><code>k</code></b></li>
+                <li>Fourier transform of the spin expectation value in <b><code>F</code></b></li>
+            </ul>
+
+            <p>
+                The number of magnetic moments stored in <code>F</code> are: <code>nMagExt = prod(nExt)*nMagAtom</code>
+            </p>
+            <figure class="image" style="width: 100%">
+                <p><img src="plots/momentlayout.svg" style="width: 15%;" alt="Mag_str">
+                <figcaption class="text">Ordering of the unit cell in the magnetic super-cell.</figcaption>
+            </figure>
+            <p>
+                The experimental magnetization can be obtained by multiplying <code>F</code> with the g-tensor!
+            </p>
+        </content>
+    </div>
+</section>
+
+<section class="blank" id="magStr_RF">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">Magnetic structure in rotating frame</div>
+        </div>
+        <content>
+
+            <p>For spin wave calculation, the complex magnetic structure is converted to the rotating frame representation using the
+                <code>spinw.magstr()</code> function.</p>
+            <p>Output of <code>spinw.magstr()</code> is a struct with fields:</p>
+            <ul>
+                <li>size of magnetic supercell in l.u. stored in <b><code>nExt</code></b></li>
+                <li>single k-vector stored in <b><code>k</code></b></li>
+                <li>vector normal to the spiral plane is stored in <b><code>n</code></b></li>
+                <li>real magnetic moment directions (spin quantization axis) are stored in <b><code>S</code></b></li>
+            </ul>
+
+            <p>The representation allows an additional <code>k=0</code> component parallel to <code>n</code>, however this is rarely used.</p>
+            <p>The conversion from Fourier components to rotating frame representation is not always possible, in this case
+                <code>magstr()</code> gives the best approximation and gives a warning. The conversion is approximate:</p>
+            <ul>
+                <li>multi-k structures</li>
+                <li>non-Bravais lattice with counter-rotating incommensurate spirals</li>
+                <li>non-Bravais lattice with non-coplanar spirals</li>
+                <li>non-Bravais antiferromagnet with non-coplanar moments</li>
+            </ul>
+        </content>
+    </div>
+</section>
+
+<section class="blank" id="magSC">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">Magnetic supercell</div>
+        </div>
+        <content>
+
+        </content>
+    </div>
+</section>
+
+
+<section class="blank" id="enterMagStr">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">Input magnetic structures</div>
+        </div>
+        <content>
+        <p>To input magnetic structures use <code>spinw.genmagstr(‘mode’,...)</code></p>
+            <p>Possible modes:</p>
+            <h3>RANDOM</h3>
+            <p>random real and imaginary magnetization vectors</p>
+            <h3>DIRECT</h3>
+            <p>direct input of every field</p>
+            <h3>TILE</h3>
+            <p>tile a magnetic supercell using the given data</p>
+            <h3>HELICAL – FOURIER</h3>
+            <p>extend the given structure by applying rotations on the moments
+                moments are either given in rotating frame formalism (S,n) or as complex vectors (S)</p>
+            <h3>ROTATE</h3>
+            <p>uniform rotation of all moments</p>
+            <h3>FUNC</h3>
+            <p>give parameters to a constraint function to generate magnetic structure</p>
+        </content>
+    </div>
+</section>
+
+<section class="blank" id="optMagStrOptions">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">Optimize magnetic structures</div>
+        </div>
+        <content>
+            <p>The magnetic structure can be optimised as a classical ground state of the spin Hamiltonian.</p>
+            <p>Three methods are available:</p>
+            <h2><code>sw.optmagk()</code></h2>
+            <ul>
+                <li>determines the magnetic propagation vector + n-vector</li>
+            </ul>
+            <h2><code>sw.optmagtsteep()</code></h2>
+            <ul>
+                <li>optimise magnetic structure for a given k-vector by succesively rotating each moment to the Weiss
+                    field direction</li>
+                <li>fastest</li>
+                <li>recommended if k-vector is known</li>
+            </ul>
+            <h2><code>sw.optmagstr()</code></h2>
+            <ul>
+                <li>optimise magnetic structure for minimum energy using non-linear optimization (fminsearch)</li>
+                <li>can include a constraint function (<code>@gm_planar()</code>, etc.)</li>
+            </ul>
+            <h2><code>sw.anneal()</code></h2>
+            <ul>
+                <li>performs simulated annealing, using the Metropolis algorithm</li>
+                <li>can calculate thermodynamic properties</li>
+            </ul>
+        </content>
+    </div>
+</section>
+
+
+<!--TODO make flow diagram for spin optimisation-->
+<section class="blank" id="optMagStrFns">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">spinw.optmagstr(‘func’,@func, ‘xmin’, x1, ‘xmax’, x2,...)</div>
+        </div>
+        <content>
+            <p>To optimize magnetic structure with constraints, use the spinw.optmagstr() method.</p>
+            <ul>
+                <li>lots of parameters to fit: $3N_{mag} + 6$</li>
+                <li>ground state magnetic structure with <b>constrained optimization</b> (simplex method)</li>
+                <li>constraints through external function:</li>
+                $$[M, k, n] = @(x)\mathtt{func}(M0, x)$$
+                <li><b><code>@gm_planar()</code></b> planar magnetic structure:</li>
+                $$[M, k, n] = \mathtt{@gm\_planar}(M0, x) \\
+                x = (\varphi_1,\varphi_2,... ,k_x,k_y,k_z,n_\Theta,n_\varphi)$$
+                <li><b><code>@gm_spherical3d()</code></b> general magnetic structure:</li>
+                $$[M, k, n] = \mathtt{@gm\_spherical3d}(M0, x) \\
+                x = (\varphi_1,\Theta_1,\varphi_2,\Theta_2,... ,k_x,k_y,k_z,n_\Theta,n_\varphi)$$
+                <li>limits: <code>xmin</code> and <code>xmax</code>, starting value <code>x0</code></li>
+            </ul>
+        </content>
+    </div>
+</section>
+
+<section class="blank" id="spinHamiltonian">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">Definition of the spin Hamiltonian</div>
+        </div>
+        <content>
+            <p>The spin Hamiltonian from LSWT: </p>
+            <h2>
+                $$H = \sum_{mi, mj} S^{T}_{mi}J_{mi, nj}S_{nj} + \sum_{mi}S^{T}_{mi}A_{i}S_{mi} + \mu_BH^{T}\sum_{mi}g_iS_{mi}$$
+            </h2>
+            <p>Identify the symbols:</p>
+            <ul>
+                <li>($m$,$n$) unit cell indices: SpinW only stores the (0,0) cell the rest is taken care by a Fourier-
+                    transformation</li>
+                <li>($i$,$j$) index of the magnetic atom on the magnetic supercell</li>
+                <li>$S_{mi}$ are stored in <code>spinw.mag_str.S</code></li>
+                <li>$J_{mi, nj}$ are given by:
+                <ul>
+                    <li><code>spinw.coupling.atom1</code> $\rightarrow$ $i$</li>
+                    <li><code>spinw.coupling.atom2</code> $\rightarrow$ $j$</li>
+                    <li><code>spinw.coupling.dl</code> $\rightarrow$ $m-n$</li>
+                    <li><code>spinw.matrix.mat(:,:,spinw.coupling.mat_idx)</code> $\rightarrow$ $J$</li>
+                </ul>
+                </li>
+                <li>$H$ is given by <code>spinw.single_ion.field</code></li>
+            </ul>
+        </content>
+    </div>
+</section>
+
+<section class="team" id="genCoupling1">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">spinw.gencoupling()</div>
+        </div>
+        <content>
+            <div class="profile">
+                <div class="basics">
+                    <!--TODO - Make plot 1-->
+                    <img src="plots/coOrd.svg"/>
+                  </div>
+                <div class="details">
+                    <figure class="code">
+                        <pre>
+                            <code class="lang-matlab">
+cryst=spinw;
+cryst.genlattice('sym','P 4','lat_const',[8 8 6]);
+cryst.addatom('r',[1/4 1/4 0],’S’,1);
+cryst.gencoupling;
+cryst.addmatrix('label','A',’value',1-eye(3));
+cryst.addaniso('A’);
+                            </code>
+                        </pre>
+                    </figure>
+                </div>
+                <div class="basics">
+                    <!--TODO - Make plot 2-->
+                    <img src="plots/coOrd.svg"/>
+                </div>
+                <div class="details">
+                    <figure class="code">
+                        <pre>
+                            <code class="lang-matlab">
+cryst=spinw;
+cryst.genlattice('lat_const',[8 8 6]);
+cryst.addatom('r',[1/4 1/4 0],'S',1);
+cryst.addatom('r',[3/4 1/4 0],'S',1);
+cryst.addatom('r',[1/4 3/4 0],'S',1);
+cryst.addatom('r',[3/4 3/4 0],'S',1);
+cryst.gencoupling;
+cryst.addmatrix('label','A','value',1-eye(3));
+cryst.addaniso('A');
+                            </code>
+                        </pre>
+                    </figure>
+                </div>
+            </div>
+        </content>
+    </div>
+</section>
+
+<section class="team" id="genCoupling2">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">spinw.gencoupling()</div>
+        </div>
+        <content>
+            <div class="profile">
+                <div class="basics">
+                    <!--TODO - Make plot 3-->
+                    <img src="plots/coOrd.svg"/>
+                </div>
+                <div class="details">
+                    <figure class="code">
+                        <pre>
+                            <code class="lang-matlab">
+cryst=spinw;
+cryst.genlattice('sym','P 4','lat_const',[8 8 6]);
+cryst.addatom('r',[1/4 1/4 0],’S’,1);
+cryst.gencoupling;
+cryst.addmatrix('label','D',’value',[1 -1 0]);
+cryst.addcoupling(‘mat’,'D',’bond’,1);
+                            </code>
+                        </pre>
+                    </figure>
+                </div>
+                <div class="basics">
+                    <!--TODO - Make plot 4-->
+                    <img src="plots/coOrd.svg"/>
+                </div>
+                <div class="details">
+                    <figure class="code">
+                        <pre>
+                            <code class="lang-matlab">
+cryst=spinw;
+cryst.genlattice('lat_const',[8 8 6]);
+cryst.addatom('r',[1/4 1/4 0],'S',1);
+cryst.addatom('r',[3/4 1/4 0],'S',1);
+cryst.addatom('r',[1/4 3/4 0],'S',1);
+cryst.addatom('r',[3/4 3/4 0],'S',1);
+cryst.gencoupling;
+cryst.addmatrix('label','D','mat',[1 -1 0]);
+cryst.addcoupling(‘mat’,'D',’bond’,1);
+                            </code>
+                        </pre>
+                    </figure>
+                </div>
+            </div>
+        </content>
+    </div>
+</section>
+
+<section class="blank" id="spinwave1">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">spinw.spinwave(Q)</div>
+        </div>
+        <content>
+            <h3 style="text-align: center"><code>swSpec = spinw.spinwave({Q1 Q2 nQ})</code></h3>
+            <ul>
+                <li>Solves the general Hamiltonian</li>
+                <li><b>Commensurate</b> and <b>incommensurate</b> magnetic structures</li>
+                <li>Calculates the spin-spin correlation function in xyz coordinate system:</li>
+                <br> $$ S^{\alpha\beta}(k, \omega) $$
+                <li>Two methods:
+                    <ul>
+                        <li>diagonalizing Hermitian matrixa $\rightarrow$ fast but only for strictly positive definite matrices</li>
+                        <li>diagonalizin non-Hermitian matrixa $\rightarrow$ bit slower, but works for non positive definite matrices</li>
+                    </ul>
+                </li>
+                <li>$Q$ can be a $3\cdot nQ$ matrix or cell that defines linear scans between points</li>
+            </ul>
+            <!--TODO Add pictures-->
+        </content>
+    </div>
+</section>
+
+<section class="blank" id="spinwave2">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">spinw.spinwave(Q,’option’,value,...)</div>
+        </div>
+        <content>
+            <p>There are a few important options:</p>
+            <h3><br><code>formfact</code></h3>
+            <ul>
+                <li><code>true</code>: Includes magnetic form factor stored in <code>spinw.unit_cell</code></li>
+                <li><b><code>false</code></b>: Magnetic form factor is not considered.</li>
+            </ul>
+            <h3><br><code>gtensor</code></h3>
+            <ul>
+                <li><code>true</code>: g-tensor is included in the spin-spin correlation function.</li>
+                <li><b><code>false</code></b>: g-tensor is not considered </li>
+            </ul>
+            <h3><br><code>hermit</code></h3>
+            <ul>
+                <li><b><code>true</code></b>: Colpa method is used.</li>
+                <li><code>false</code>: White method is used</li>
+            </ul>
+            <h3><br><code>usemex</code></h3>
+            <ul>
+                <li><code>true</code>: Use compiled code for speedup (especially for small magnetic unit cells)</li>
+                <li><b><code>false</code></b>: Use MATLAB JIT code</li>
+            </ul>
+        </content>
+    </div>
+</section>
+
+<section class="blank" id="spinSpinCorrelation1">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">Spin-spin correlation function</div>
+        </div>
+        <content>
+            <h3 style="text-align: center"><code>swSpec = spinw.spinwave({Q1 Q2 nQ})</code></h3>
+            <p><b><code>swSpec</code></b> structure for commensurate structures:</p>
+            <ul>
+                <li><span style="padding-right: 5ch;text-align: left"><code>.omega</code></span>- D:$[2\cdot nMagExt, nHkl]$, dispersion at every Q-point</li>
+                <li><span style="padding-right: 7ch;text-align: left"><code>.Sab</code></span>- D:$[3, 3, 2, \cdot nMagExt, nHkl]$, 3x3 correlation function for every omega and Q</li>
+                <li><span style="padding-right: 7ch;text-align: left"><code>.hkl</code></span>- D:$[3, nHkl]$, Q points in r.l.u.</li>
+                <li><span style="padding-right: 6ch;text-align: left"><code>.hklA</code></span>- D:$[3, nHkl]$, Q points in $A^{-1}$, xyz coordinate system</li>
+                <li><span style="padding-right: 4ch;text-align: left"><code>.incomm</code></span>- Whether the spectrum is calculated in incommensurate mode.</li>
+                <li><span style="padding-right: 7ch;text-align: left"><code>.obj</code></span>- Copy of the input spinw object.</li>
+            </ul>
+            <p>If there are several crystallographic twins, <code>.omega</code> and <code>.Sab</code> are packaged into a cell that contains nTwin number of matrices.</p>
+            <p>For incommensurate magnetic structures nHkl is tripled: $(k-k_m,k,k+k_m)$.</p>
+        </content>
+    </div>
+</section>
+
+
+<section class="blank" id="spinSpinCorrelation2">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">Spin-spin correlation function - Neutron cross-section</div>
+        </div>
+        <content>
+            <h3 style="text-align: center"><code>swSpec = <b>sw_neutron</b>(swSpec, ‘pol’,true,’uv’,{u1 v1})</code></h3>
+            <p>Calculates the polarised/unpolarised neutron scattering cross section.</p>
+            <p>New fields:</p>
+            <ul>
+                <li><span style="padding-right: 5ch;text-align: left"><code>.Sperp</code></span>- D:$[2\cdot nMagExt, nHkl]$, neutron scattering intensity for each .omega and Q</li>
+                <li><span style="padding-right: 6ch;text-align: left"><code>.intP</code></span>- D:$[3, 2, \cdot nMagExt, nHkl]$, polarised intensity</li>
+                <li><span style="padding-right: 7ch;text-align: left"><code>.Pab</code></span>- D:$[3, 3, 2\cdot nMagExt, nHkl]$, polarisation matrix for every mode and Q</li>
+                <li><span style="padding-right: 7ch;text-align: left"><code>.Mab</code></span>- D:$[3, 3, 2\cdot nMagExt, nHkl]$, spin-spin correlation function in the Blue-Maleev coordinate
+                    system ($x\parallel Q$, $y$ in scattering plane, $z$ vertical)</li>
+            </ul>
+           </content>
+    </div>
+</section>
+
+<section class="blank" id="spinSpinCorrelation3">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">Spin-spin correlation function - Energy dependence</div>
+        </div>
+        <content>
+            <h3 style="text-align: center"><code>swSpec = <b>sw_egrid</b>(swSpec, ‘component’,{’Sxx’ ‘Syy’},’Evect’,E)</code></h3>
+            <p>Convolutes selected elements of the spin-spin correlation function.</p>
+            <ul>
+                <li><b>‘<code>component</code>’</b>: selects either a single element: ‘<code>Sperp</code>’, ‘<code>S$_{xx}$+S$_{yy}$+S$_{zz}$</code>’, ‘<code>S$_{xx}$</code>’, etc. or several components to compare: {‘<code>S$_{xx}$</code>’, ‘<code>S$_{yy}$</code>’}, etc.</li>
+                <li><b>'<code>Evect</code>'</b>: energy bin (bin edges)</li>
+            </ul>
+            <p>New fields:</p>
+            <ul>
+                <li><span style="padding-right: 5ch;text-align: left"><code>.swConv</code></span>- D:$[nE, nHKL]$, convoluted spectrum</li>
+                <li><span style="padding-right: 6ch;text-align: left"><code>.swInt</code></span>- D:$[nMode, nHKL]$, polarised intensity</li>
+            </ul>
+        </content>
+    </div>
+</section>
+
+<section class="blank" id="spinSpinCorrelation4">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">Spin-spin correlation function - Instrumental Resolution</div>
+        </div>
+        <content>
+            <h3 style="text-align: center"><code>swSpec = <b>sw_instrument</b>(swSpec, ‘dE’,dE1, ‘dQ’, dQ1, ...)</code></h3>
+            <p>Introduces instrumental and other factors to the convoluted spectrum.</p>
+            <ul>
+                <li>Finite energy and Q resolution (Gaussian).</li>
+                <li>($k_i$, $Theta_{Min}$) to calculate the measurable ($E$,$Q$) volume.</li>
+                <li>energy transfer dependent energy resolution for TOF.</li>
+                <li><b>'<code>norm</code>'</b>:true to normalize the spectrum to <b>mbarn/meV/cell</b> units</li>
+            </ul>
+            <p>New fields:</p>
+            <ul>
+                <li><span style="padding-right: 5ch;text-align: left"><code>.swRaw</code></span>- D:$[nE, nHKL]$, original convoluted spectrum</li>
+                <li><span style="padding-right: 6ch;text-align: left"><code>.norm</code></span></li>
+                <li><span style="padding-right: 8ch;text-align: left"><code>.ki</code></span></li>
+                <li><span style="padding-right: 8ch;text-align: left"><code>.dE</code></span></li>
+                <li><span style="padding-right: 8ch;text-align: left"><code>.dQ</code></span></li>
+            </ul>
+        </content>
+    </div>
+</section>
+<section class="code color--light" id="SymmetryAnalysis">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">Symmetry Analysis</div>
+        </div>
+        <content>
+            <p>Determine the symmetry allowed elements of the matrices with <code>spinw.getmatrix</code> or <code>spinw.setmatrix</code>.
+                <br>Most common usage settings:</p>
+            <p>Text output of the possible modes.</p>
+            <figure class="code">
+                <pre>
+                    <code class="lang-matlab">spinw.getmatrix(‘mat’,’J1’);</code>
+                </pre>
+            </figure>
+            <p>Matrix output of the possible modes, D: [3 3 nModes].</p>
+            <figure class="code">
+                <pre>
+<code class="lang-matlab">normModes = spinw.getmatrix(‘mat’,’J1’);</code>
+                </pre>
+            </figure>
+            <p>Assigning pre-factors for the calculated modes and save them into the <code>J1</code> matrix</p>
+            <figure class="code">
+                <pre>
+<code class="lang-matlab">spinw.setmatrix(‘mat’,’J1’,’pref’,P1);</code>
+                </pre>
+            </figure>
+        </content>
+    </div>
+</section>
+
+<section class="code color--light" id="symbolic1">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">Symbolic calculation example</div>
+        </div>
+        <content>
+        <figure class="code">
+            <!--
+                Code highlighting is performed by highlight.js
+
+                Leading whitespace is trimmed by default.  Add the data-notrim attribute to the code element to preserve it.
+                If showing an HTML example, add the data-escape attribute to the code element.
+            -->
+            <pre>
+                <code class="lang-matlab">chainS = spinw;
+chainS.symbolic(true)
+chainS.genlattice('lat_const',[3 8 8])
+chainS.addatom('r',[0 0 0],'S',sym(1))
+chainS.gencoupling;
+chainS.addmatrix('label','J1')
+chainS.addmatrix('label','J2')
+chainS.addcoupling('mat','J1','bond',1);
+chainS.addcoupling('mat','J2','bond',2);
+chainS.genmagstr('mode','helical','k',sym([1/2 0 0]),'nExt',[2 1 1],'n',sym([0 0 1]),'S',sym([0 1 0])');
+chSpecSym = chainS.spinwave;</code>
+            </pre>
+        </figure>
+        <p>$$-(e^{-4\pi h i} - 1)\sqrt{J_2^2 - 2J_2^2e^{4\pi h i} +J_2^2e^{8\pi h i} - J_1^2e^{4\pi h i} + 4J_1J_2e^{4\pi h i}}$$</p>
+        <p>$$ 2\cos (2\pi h)\sqrt{J_1^2 + 4J_1J_2 - 4J_2^2\sin^2(2\pi h) }$$</p>
+        </content>
+    </div>
+</section>
+
+<section class="code color--light" id="symbolic2">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">Symbolic calculation example</div>
+        </div>
+        <content>
+        <figure class="code">
+            <pre>
+                <code class="lang-matlab">syms('J1','J2');
+omega1 = subs(chSpecSym.omega(1),[J1 J2],[1 0.2]);
+ezplot(real(omega1),[0 1])</code>
+            </pre>
+        </figure>
+        <!--TODO Add a picture-->
+        </content>
+    </div>
+</section>
+
+
+<style>
+    #double li  {
+        width:50%;
+        float:left;
+        display:inline;}
+    #triple li  {
+        width:33.333%;
+        float:left;
+        display:inline;
+    }
+    #quad li    {
+        width:25%;
+        float:left;
+        display:inline;
+    }
+</style>
+
+<section class="code color--light" id="methods">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">All methods of the spinw object</div>
+        </div>
+        <content>
+            <h2>SpinW methods:</h2>
+            <ul id="quad">
+                <li>abc</li>
+                <li>addaniso</li>
+                <li>addatom</li>
+                <li>addcoupling</li>
+                <li>addg</li>
+                <li>addmatrix</li>
+                <li>addtwin</li>
+                <li>anneal</li>
+                <li>annealloop</li>
+                <li>atom</li>
+                <li>basisvector</li>
+                <li>copy</li>
+                <li>corespec</li>
+                <li>couplingtable</li>
+                <li>delete</li>
+                <li>disp</li>
+                <li>energy</li>
+                <li>export</li>
+                <li>field</li>
+                <li>fileid</li>
+                <li>fitpow</li>
+                <li>fitspec</li>
+                <li>formula</li>
+                <li>fourier</li>
+                <li>fouriersym</li>
+                <li>gencoupling</li>
+                <li>genlattice</li>
+                <li>genmagstr</li>
+                <li>getmatrix</li>
+                <li>horace</li>
+                <li>intmatrix</li>
+                <li>isvalid</li>
+                <li>magtable</li>
+                <li>matom</li>
+                <li>matparser</li>
+                <li>meanfield</li>
+                <li>moment</li>
+                <li>natom</li>
+                <li>nbond</li>
+                <li>newcell</li>
+                <li>nmagext</li>
+                <li>nmat</li>
+                <li>nosym</li>
+                <li>notwin</li>
+                <li>ntwin</li>
+                <li>optmagsteep</li>
+                <li>optmagstr</li>
+                <li>phonon</li>
+                <li>phononsym</li>
+                <li>plot</li>
+                <li>powspec</li>
+                <li>setmatrix</li>
+                <li>spinw</li>
+                <li>spinwave</li>
+                <li>spinwavesym</li>
+                <li>struct</li>
+                <li>structfact</li>
+                <li>symbolic</li>
+                <li>symmetry</li>
+                <li>temperature</li>
+                <li>tisza</li>
+                <li>twinq</li>
+                <li>unitcell</li>
+                <li>version</li>
+            </ul>
+        </content>
+    </div>
+</section>
+
+<section class="code color--light" id="useful">
+    <div class="grid-wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="section">All methods of the spinw object</div>
+        </div>
+        <content>
+            <h3>Tools:</h3>
+            <ul id="quad">
+                <li>sw_atomdata</li>
+                <li>sw_freemem</li>
+                <li>sw_cmod</li>
+                <li>sw_converter</li>
+                <li>sw_idata</li>
+                <li>sw_initialize</li>
+                <li>sw_parstr</li>
+                <li>sw_qscan</li>
+                <li>sw_readparam</li>
+                <li>sw_rootdir</li>
+                <li>sw_status</li>
+                <li>sw_uniquetol</li>
+                <li>sw_update</li>
+                <li>sw_version</li>
+            </ul>
+            <h3>Magnetic Structure:</h3>
+            <ul id="quad" style="width: 100%">
+                <li>sw_annealfigure</li>
+                <li>sw_annealplot</li>
+                <li>sw_intsf</li>
+                <li>sw_fstat</li>
+                <li>sw_fsub</li>
+                <li>sw_mff</li>
+                <li>sw_plotsf</li>
+            </ul>
+            <h3>Basic Geometry:</h3>
+            <ul id="quad" style="width: 100%">
+                <li>sw_cartesian</li>
+                <li>sw_mirror</li>
+                <li>sw_nvect</li>
+                <li>sw_rot</li>
+            </ul>
+            <h3>Spectrum:</h3>
+            <ul id="quad" style="width: 100%">
+                <li>sw_econtract</li>
+                <li>sw_extendlattice</li>
+                <li>sw_conv</li>
+                <li>sw_instrument</li>
+                <li>sw_neutron</li>
+                <li>sw_omegasum</li>
+                <li>sw_plotspec</li>
+                <li>sw_readspec</li>
+            </ul>
+            <h3>Plotting:</h3>
+            <ul id="quad" style="width: 100%">
+                <li>+sw_plot</li>
+            </ul>
+            <h3>Symmetry:</h3>
+            <ul id="quad" style="width: 100%">
+                <li>+swsym</li>
+            </ul>
         </content>
     </div>
 </section>

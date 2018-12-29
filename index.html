@@ -31,7 +31,7 @@
 		<!--<section data-external="parts/intro.html"> </section>-->
         <section data-external="parts/intro.html"> </section>
 		<section data-external="parts/slides.html"> </section>
-        <section data-external="parts/other.html"> </section>
+        <!--<section data-external="parts/other.html"> </section>-->
 	</div>
 </div>
 
@@ -66,6 +66,10 @@
 		// 	},
 		// 	// ...
 		// ],
+		math: {
+			// mathjax: 'node_modules/mathjax/MathJax.js' //offline local
+			mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js'
+		},
 		dependencies: [
 			{ src: 'presentation_base/plugin/menu/menu.js' },
 			{ src: 'presentation_base/plugin/math/math.js', async: true },

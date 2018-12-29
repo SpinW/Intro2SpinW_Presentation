@@ -1,0 +1,72 @@
+<svg version="1.1"
+     baseProfile="full"
+     viewBox="0 0 65 75" width="100%" height="auto"
+     xmlns="http://www.w3.org/2000/svg">
+
+    <!-- arrowhead marker definition -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5"
+            markerWidth="2.5" markerHeight="5"
+            orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" />
+    </marker>
+    <style>
+        .smallLab {font: normal 5px sans-serif;}
+    </style>
+
+    <!--Draw the cells-->
+    <g fill="none" stroke="black" stroke-width="0.5">
+        <path stroke-dasharray="2,2" d="M15 10 l30 0" />
+        <path stroke-dasharray="2,2" d="M15 25 l45 0" />
+        <path stroke-dasharray="2,2" d="M15 40 l45 0" />
+        <path stroke-dasharray="2,2" d="M15 55 l45 0" />
+
+        <path stroke-dasharray="2,2" d="M15 10 l0 45" />
+        <path stroke-dasharray="2,2" d="M30 10 l0 45" />
+        <path stroke-dasharray="2,2" d="M45 10 l0 45" />
+        <path stroke-dasharray="2,2" d="M60 25 l0 30" />
+    </g>
+
+
+    <!--Draw the atoms-->
+    <circle cx="15" cy="10" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25"/>
+    <circle cx="30" cy="10" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25"/>
+    <circle cx="45" cy="10" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25" />
+    <!--<circle cx="55" cy="10" r="2" fill=#FF9F33 stroke="black" stroke-width="0.25" />-->
+
+    <circle cx="15" cy="25" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25" />
+    <circle cx="30" cy="25" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25" />
+    <circle cx="45" cy="25" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25" />
+    <circle cx="60" cy="25" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25" />
+
+
+    <circle cx="15" cy="40" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25" />
+    <circle cx="30" cy="40" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25" />
+    <circle cx="45" cy="40" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25" />
+    <circle cx="60" cy="40" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25" />
+
+
+    <circle cx="15" cy="55" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25" />
+    <circle cx="30" cy="55" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25" />
+    <circle cx="45" cy="55" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25" />
+    <circle cx="60" cy="55" r="2" fill='#FF9F33' stroke="black" stroke-width="0.25" />
+
+    <!--Draw the arrows vectors-->
+    <polyline points="15,40 15,55 30,55" fill="none" stroke="black" stroke-width="0.625"
+              marker-start="url(#arrow)" marker-end="url(#arrow)"  />
+    <polyline points="30,25 15,55 45,40" fill="none" stroke="black" stroke-width="0.625"
+              marker-start="url(#arrow)" marker-end="url(#arrow)"  />
+    <polyline points="15,55 30,40" fill="none" stroke="black" stroke-width="0.625"
+              marker-end="url(#arrow)"  />
+    <!--Add labels-->
+    <text x="22.5" y="61" class="smallLab" text-anchor="middle">r1</text>
+    <text x="11" y="50" class="smallLab" text-anchor="middle">r1</text>
+    <text x="25" y="50" class="smallLab" text-anchor="middle">r2</text>
+    <text x="37.5" y="51" class="smallLab" text-anchor="middle">r4</text>
+    <text x="22.5" y="32.5" class="smallLab" text-anchor="middle">r4</text>
+
+    <!--Draw the axes-->
+    <polyline points="4,50 4,68 22,68" fill="none" stroke="black"
+              marker-start="url(#arrow)" marker-end="url(#arrow)"  />
+    <text x="18" y="73" class="smallLab">a</text>
+    <text x="0" y="57" class="smallLab">b</text>
+</svg>

@@ -1,33 +1,13 @@
-<!--<section class="blank" id="myslide1">-->
-    <!--<div class="grid-wrapper">-->
-        <!--<div class="header">-->
-            <!--<div class="logo"></div>-->
-            <!--<div class="section"> About SpinW </div>-->
-        <!--</div>-->
-            <!--<iframe data-src="demo_iframe.html" name="iframe_a" frameborder="0" style="overflow:hidden;height=100%;width=100%" height="100%" width="100%"></iframe>-->
-    <!--</div>-->
-<!--</section>-->
-
-<section class="blank" id="myslid2">
-    <div class="grid-wrapper">
-        <div class="header">
+<section>
+    <section class="subsection color--radiant" id="sw_object">
+        <div class="grid-wrapper">
             <div class="logo"></div>
-            <div class="section"> SpinW Class </div>
+            <h1>The SpinW object</h1>
+            <div class="description">
+                Fields of the SpinW object
+            </div>
         </div>
-        <iframe data-src="plots/spinw_workflow.html" name="iframe_a" frameborder="0" height="100%" width="100%"></iframe>
-    </div>
-</section>
-
-<section class="blank" id="myslid2">
-    <div class="grid-wrapper">
-        <div class="header">
-            <div class="logo"></div>
-            <div class="section"> SpinW Class </div>
-        </div>
-        <iframe data-src="plots/spinw_workflow.html" name="iframe_a" frameborder="0" height="100%" width="100%"></iframe>
-    </div>
-</section>
-
+    </section>
 <section class="blank" id="sw_properties">
     <style>
         .limiter {
@@ -250,13 +230,23 @@ obj.genlattice('lat_const',[3 3 4], 'sym', 1,'angled',[90 90 120]);
                 </code>
                 </pre>
             </figure>
-            Matrix dimensions convention:<br>
-            <b>the changing/larger dimensions are at the highest index: (1, 3), (3, <code>nAtom</code>)</b>
         </content>
     </div>
 </section>
+</section>
 
-<section class="team" id="co-ordSystem">
+<section>
+    <section class="subsection color--radiant" id="sw_latticeHead">
+        <div class="grid-wrapper">
+            <div class="logo"></div>
+            <h1><code>lattice</code> properties</h1>
+            <div class="description">
+                How to describe a lattice.
+            </div>
+        </div>
+    </section>
+
+<section class="showit" id="co-ordSystem">
     <div class="grid-wrapper">
         <div class="header">
             <div class="logo"></div>
@@ -275,7 +265,7 @@ obj.genlattice('lat_const',[3 3 4], 'sym', 1,'angled',[90 90 120]);
                     <p>
                     <h2>Lattice unit (lu):</h2>
                     <ul>
-                        <li>defined by the unit cell: (a, b, c, α, β, γ)</li>
+                        <li>defined by the unit cell: (a, b, c, $\alpha$, $\beta$, $\gamma$)</li>
                         <li>atomic position</li>
                     </ul>
                     <h2><br>Reciprocal lattice unit (rlu):</h2>
@@ -285,7 +275,7 @@ obj.genlattice('lat_const',[3 3 4], 'sym', 1,'angled',[90 90 120]);
                     </ul>
                     <h2><br>xyz Descartes coordinate system:</h2>
                     <ul>
-                        <li>momentum transfer in Å -1 unit</li>
+                        <li>momentum transfer in $\unicode{x212B}^{-1}$ unit</li>
                         <li>magnetic field</li>
                         <li>magnetic moments</li>
                         <li>J, A, g matrices</li>
@@ -317,19 +307,11 @@ obj.genlattice('lat_const',[3 3 4], 'sym', 1,'angled',[90 90 120]);
             <p>To generate transformation matrices use:</p>
             Rotation:
             <figure class="code">
-                <pre>
-                <code class="lang-matlab" style="line-height: 0.25rem; overflow: hidden;">
-R = sw_rotmat(rotAxis, rotAngle);
-                </code>
-                </pre>
+                <pre><code class="matlab"> R = sw_rotmat(rotAxis, rotAngle);</code></pre>
             </figure>
             Mirroring:
             <figure class="code">
-                <pre>
-                <code class="lang-matlab" style="line-height: 0.25rem; overflow: hidden;">
-[~, R] = sw_mirror(normalAxis);
-                </code>
-                </pre>
+                <pre><code class="matlab">[~, R] = sw_mirror(normalAxis);</code></pre>
             </figure>
         </content>
     </div>
@@ -456,8 +438,19 @@ R = sw_rotmat(rotAxis, rotAngle);
         </content>
     </div>
 </section>
+</section>
+<section>
+    <section class="subsection color--radiant" id="sw_matrixHead">
+        <div class="grid-wrapper">
+            <div class="logo"></div>
+            <h1><code>matrix</code> properties</h1>
+            <div class="description">
+                How to describe a matrix.
+            </div>
+        </div>
+    </section>
 
-<section class="blank" id="matrices">
+    <section class="blank" id="matrices">
     <div class="grid-wrapper">
         <div class="header">
             <div class="logo"></div>
@@ -488,7 +481,17 @@ R = sw_rotmat(rotAxis, rotAngle);
         </content>
     </div>
 </section>
-
+</section>
+<section>
+    <section class="subsection color--radiant" id="sw_coup0lingeHead">
+        <div class="grid-wrapper">
+            <div class="logo"></div>
+            <h1><code>coupling</code> properties</h1>
+            <div class="description">
+                How to describe the coupling in a cell.
+            </div>
+        </div>
+    </section>
 <section class="blank" id="bonds">
     <div class="grid-wrapper">
         <div class="header">
@@ -1075,6 +1078,17 @@ R = sw_rotmat(rotAxis, rotAngle);
         </content>
     </div>
 </section>
+</section>
+<section>
+    <section class="subsection color--radiant" id="sw_singleIonHead">
+        <div class="grid-wrapper">
+            <div class="logo"></div>
+            <h1><code>single_ion</code> properties</h1>
+            <div class="description">
+                How to add single ion properties.
+            </div>
+        </div>
+    </section>
 
 <section class="blank" id="single_ion">
     <div class="grid-wrapper">
@@ -1083,15 +1097,13 @@ R = sw_rotmat(rotAxis, rotAngle);
             <div class="section">Single ion properties</div>
         </div>
         <content>
-
-            <h4>Single ion, g-tensor and external field values are stored in <code>spinw.single_ion</code>.</h4>
-
-            Subfields:
-
+            <h4>Single ion</h4>
+            <p>g-tensor and external field values are stored in <code>spinw.single_ion</code>.</p>
+            <p>Subfields:</p>
             <ul>
-                <li>single ion anisotropy is stored for <code>nMagAtom</code> with a pointer to a matrix in aniso</li>
-                <li>g-tensor is <code>nMagAtom</code> is stored in g</li>
-                <li>field is stored as a row vector</li>
+                <li><code>aniso</code> single ion anisotropy is stored with <code>1xnMagAtom</code> and a pointer to a matrix</li>
+                <li><code>g</code> g-tensor is <code>nMagAtom</code></li>
+                <li><code>field</code> stored as a row vector</li>
             </ul>
 
             <p>
@@ -1104,7 +1116,17 @@ R = sw_rotmat(rotAxis, rotAngle);
         </content>
     </div>
 </section>
-
+</section>
+<section>
+    <section class="subsection color--radiant" id="sw_magStrHead">
+        <div class="grid-wrapper">
+            <div class="logo"></div>
+            <h1><code>mag_srt</code> properties</h1>
+            <div class="description">
+                How to add a magnetic structure.
+            </div>
+        </div>
+    </section>
 <section class="blank" id="magStr">
     <div class="grid-wrapper">
         <div class="header">
@@ -1112,7 +1134,6 @@ R = sw_rotmat(rotAxis, rotAngle);
             <div class="section">Magnetic structure</div>
         </div>
         <content>
-
             <h4>Magnetic structure is stored in the <b><code>spinw.mag_str field</code></b>.</h4>
             <p>It can store arbitrary magnetic structures using Fourier components.</p>
             <p>Subfields:</p>
@@ -1172,101 +1193,116 @@ R = sw_rotmat(rotAxis, rotAngle);
     <div class="grid-wrapper">
         <div class="header">
             <div class="logo"></div>
-            <div class="section">Magnetic supercell</div>
+            <div class="section">All other information</div>
         </div>
         <content>
-
+            <h1 style="text-align: center">This will be covered in the magnetic structure presentation.<br><br>
+                <a href="http://www.spinw.org/magneticStructurePresentation" target="_blank"> Magnetic Structure Presentation</a></h1>
         </content>
     </div>
 </section>
 
 
-<section class="blank" id="enterMagStr">
-    <div class="grid-wrapper">
-        <div class="header">
+<!--<section class="blank" id="enterMagStr">-->
+    <!--<div class="grid-wrapper">-->
+        <!--<div class="header">-->
+            <!--<div class="logo"></div>-->
+            <!--<div class="section">Input magnetic structures</div>-->
+        <!--</div>-->
+        <!--<content>-->
+        <!--<p>To input magnetic structures use <code>spinw.genmagstr(‘mode’,...)</code></p>-->
+            <!--<p>Possible modes:</p>-->
+            <!--<h3>RANDOM</h3>-->
+            <!--<p>random real and imaginary magnetization vectors</p>-->
+            <!--<h3>DIRECT</h3>-->
+            <!--<p>direct input of every field</p>-->
+            <!--<h3>TILE</h3>-->
+            <!--<p>tile a magnetic supercell using the given data</p>-->
+            <!--<h3>HELICAL – FOURIER</h3>-->
+            <!--<p>extend the given structure by applying rotations on the moments-->
+                <!--moments are either given in rotating frame formalism (S,n) or as complex vectors (S)</p>-->
+            <!--<h3>ROTATE</h3>-->
+            <!--<p>uniform rotation of all moments</p>-->
+            <!--<h3>FUNC</h3>-->
+            <!--<p>give parameters to a constraint function to generate magnetic structure</p>-->
+        <!--</content>-->
+    <!--</div>-->
+<!--</section>-->
+
+<!--<section class="blank" id="optMagStrOptions">-->
+    <!--<div class="grid-wrapper">-->
+        <!--<div class="header">-->
+            <!--<div class="logo"></div>-->
+            <!--<div class="section">Optimize magnetic structures</div>-->
+        <!--</div>-->
+        <!--<content>-->
+            <!--<p>The magnetic structure can be optimised as a classical ground state of the spin Hamiltonian.</p>-->
+            <!--<p>Three methods are available:</p>-->
+            <!--<h2><code>sw.optmagk()</code></h2>-->
+            <!--<ul>-->
+                <!--<li>determines the magnetic propagation vector + n-vector</li>-->
+            <!--</ul>-->
+            <!--<h2><code>sw.optmagtsteep()</code></h2>-->
+            <!--<ul>-->
+                <!--<li>optimise magnetic structure for a given k-vector by succesively rotating each moment to the Weiss-->
+                    <!--field direction</li>-->
+                <!--<li>fastest</li>-->
+                <!--<li>recommended if k-vector is known</li>-->
+            <!--</ul>-->
+            <!--<h2><code>sw.optmagstr()</code></h2>-->
+            <!--<ul>-->
+                <!--<li>optimise magnetic structure for minimum energy using non-linear optimization (fminsearch)</li>-->
+                <!--<li>can include a constraint function (<code>@gm_planar()</code>, etc.)</li>-->
+            <!--</ul>-->
+            <!--<h2><code>sw.anneal()</code></h2>-->
+            <!--<ul>-->
+                <!--<li>performs simulated annealing, using the Metropolis algorithm</li>-->
+                <!--<li>can calculate thermodynamic properties</li>-->
+            <!--</ul>-->
+        <!--</content>-->
+    <!--</div>-->
+<!--</section>-->
+
+
+<!--&lt;!&ndash;TODO make flow diagram for spin optimisation&ndash;&gt;-->
+<!--<section class="blank" id="optMagStrFns">-->
+    <!--<div class="grid-wrapper">-->
+        <!--<div class="header">-->
+            <!--<div class="logo"></div>-->
+            <!--<div class="section">spinw.optmagstr(‘func’,@func, ‘xmin’, x1, ‘xmax’, x2,...)</div>-->
+        <!--</div>-->
+        <!--<content>-->
+            <!--<p>To optimize magnetic structure with constraints, use the spinw.optmagstr() method.</p>-->
+            <!--<ul>-->
+                <!--<li>lots of parameters to fit: $3N_{mag} + 6$</li>-->
+                <!--<li>ground state magnetic structure with <b>constrained optimization</b> (simplex method)</li>-->
+                <!--<li>constraints through external function:</li>-->
+                <!--$$[M, k, n] = @(x)\mathtt{func}(M0, x)$$-->
+                <!--<li><b><code>@gm_planar()</code></b> planar magnetic structure:</li>-->
+                <!--$$[M, k, n] = \mathtt{@gm\_planar}(M0, x) \\-->
+                <!--x = (\varphi_1,\varphi_2,... ,k_x,k_y,k_z,n_\Theta,n_\varphi)$$-->
+                <!--<li><b><code>@gm_spherical3d()</code></b> general magnetic structure:</li>-->
+                <!--$$[M, k, n] = \mathtt{@gm\_spherical3d}(M0, x) \\-->
+                <!--x = (\varphi_1,\Theta_1,\varphi_2,\Theta_2,... ,k_x,k_y,k_z,n_\Theta,n_\varphi)$$-->
+                <!--<li>limits: <code>xmin</code> and <code>xmax</code>, starting value <code>x0</code></li>-->
+            <!--</ul>-->
+        <!--</content>-->
+    <!--</div>-->
+<!--</section>-->
+</section>
+
+<section>
+
+    <section class="subsection color--radiant" id="sw_hamHead">
+        <div class="grid-wrapper">
             <div class="logo"></div>
-            <div class="section">Input magnetic structures</div>
+            <h1>Evaluating the Hamiltonian</h1>
+            <div class="description">
+                Details about actually solving a system.
+            </div>
         </div>
-        <content>
-        <p>To input magnetic structures use <code>spinw.genmagstr(‘mode’,...)</code></p>
-            <p>Possible modes:</p>
-            <h3>RANDOM</h3>
-            <p>random real and imaginary magnetization vectors</p>
-            <h3>DIRECT</h3>
-            <p>direct input of every field</p>
-            <h3>TILE</h3>
-            <p>tile a magnetic supercell using the given data</p>
-            <h3>HELICAL – FOURIER</h3>
-            <p>extend the given structure by applying rotations on the moments
-                moments are either given in rotating frame formalism (S,n) or as complex vectors (S)</p>
-            <h3>ROTATE</h3>
-            <p>uniform rotation of all moments</p>
-            <h3>FUNC</h3>
-            <p>give parameters to a constraint function to generate magnetic structure</p>
-        </content>
-    </div>
-</section>
+    </section>
 
-<section class="blank" id="optMagStrOptions">
-    <div class="grid-wrapper">
-        <div class="header">
-            <div class="logo"></div>
-            <div class="section">Optimize magnetic structures</div>
-        </div>
-        <content>
-            <p>The magnetic structure can be optimised as a classical ground state of the spin Hamiltonian.</p>
-            <p>Three methods are available:</p>
-            <h2><code>sw.optmagk()</code></h2>
-            <ul>
-                <li>determines the magnetic propagation vector + n-vector</li>
-            </ul>
-            <h2><code>sw.optmagtsteep()</code></h2>
-            <ul>
-                <li>optimise magnetic structure for a given k-vector by succesively rotating each moment to the Weiss
-                    field direction</li>
-                <li>fastest</li>
-                <li>recommended if k-vector is known</li>
-            </ul>
-            <h2><code>sw.optmagstr()</code></h2>
-            <ul>
-                <li>optimise magnetic structure for minimum energy using non-linear optimization (fminsearch)</li>
-                <li>can include a constraint function (<code>@gm_planar()</code>, etc.)</li>
-            </ul>
-            <h2><code>sw.anneal()</code></h2>
-            <ul>
-                <li>performs simulated annealing, using the Metropolis algorithm</li>
-                <li>can calculate thermodynamic properties</li>
-            </ul>
-        </content>
-    </div>
-</section>
-
-
-<!--TODO make flow diagram for spin optimisation-->
-<section class="blank" id="optMagStrFns">
-    <div class="grid-wrapper">
-        <div class="header">
-            <div class="logo"></div>
-            <div class="section">spinw.optmagstr(‘func’,@func, ‘xmin’, x1, ‘xmax’, x2,...)</div>
-        </div>
-        <content>
-            <p>To optimize magnetic structure with constraints, use the spinw.optmagstr() method.</p>
-            <ul>
-                <li>lots of parameters to fit: $3N_{mag} + 6$</li>
-                <li>ground state magnetic structure with <b>constrained optimization</b> (simplex method)</li>
-                <li>constraints through external function:</li>
-                $$[M, k, n] = @(x)\mathtt{func}(M0, x)$$
-                <li><b><code>@gm_planar()</code></b> planar magnetic structure:</li>
-                $$[M, k, n] = \mathtt{@gm\_planar}(M0, x) \\
-                x = (\varphi_1,\varphi_2,... ,k_x,k_y,k_z,n_\Theta,n_\varphi)$$
-                <li><b><code>@gm_spherical3d()</code></b> general magnetic structure:</li>
-                $$[M, k, n] = \mathtt{@gm\_spherical3d}(M0, x) \\
-                x = (\varphi_1,\Theta_1,\varphi_2,\Theta_2,... ,k_x,k_y,k_z,n_\Theta,n_\varphi)$$
-                <li>limits: <code>xmin</code> and <code>xmax</code>, starting value <code>x0</code></li>
-            </ul>
-        </content>
-    </div>
-</section>
 
 <section class="blank" id="spinHamiltonian">
     <div class="grid-wrapper">
@@ -1474,7 +1510,7 @@ cryst.addcoupling(‘mat’,'D',’bond’,1);
                 <li><span style="padding-right: 5ch;text-align: left"><code>.omega</code></span>- D:$[2\cdot nMagExt, nHkl]$, dispersion at every Q-point</li>
                 <li><span style="padding-right: 7ch;text-align: left"><code>.Sab</code></span>- D:$[3, 3, 2, \cdot nMagExt, nHkl]$, 3x3 correlation function for every omega and Q</li>
                 <li><span style="padding-right: 7ch;text-align: left"><code>.hkl</code></span>- D:$[3, nHkl]$, Q points in r.l.u.</li>
-                <li><span style="padding-right: 6ch;text-align: left"><code>.hklA</code></span>- D:$[3, nHkl]$, Q points in $A^{-1}$, xyz coordinate system</li>
+                <li><span style="padding-right: 6ch;text-align: left"><code>.hklA</code></span>- D:$[3, nHkl]$, Q points in $\unicode{x212B}^{-1}$, xyz coordinate system</li>
                 <li><span style="padding-right: 4ch;text-align: left"><code>.incomm</code></span>- Whether the spectrum is calculated in incommensurate mode.</li>
                 <li><span style="padding-right: 7ch;text-align: left"><code>.obj</code></span>- Copy of the input spinw object.</li>
             </ul>
@@ -1585,6 +1621,19 @@ cryst.addcoupling(‘mat’,'D',’bond’,1);
     </div>
 </section>
 
+</section>
+<section>
+
+    <section class="subsection color--radiant" id="symbolicHead">
+        <div class="grid-wrapper">
+            <div class="logo"></div>
+            <h1>Evaluating the Hamiltonian - Symbolically</h1>
+            <div class="description">
+                Solving the system symbolically.
+            </div>
+        </div>
+    </section>
+
 <section class="code color--light" id="symbolic1">
     <div class="grid-wrapper">
         <div class="header">
@@ -1593,23 +1642,17 @@ cryst.addcoupling(‘mat’,'D',’bond’,1);
         </div>
         <content>
         <figure class="code">
-            <!--
-                Code highlighting is performed by highlight.js
-
-                Leading whitespace is trimmed by default.  Add the data-notrim attribute to the code element to preserve it.
-                If showing an HTML example, add the data-escape attribute to the code element.
-            -->
             <pre>
                 <code class="lang-matlab">chainS = spinw;
 chainS.symbolic(true)
-chainS.genlattice('lat_const',[3 8 8])
-chainS.addatom('r',[0 0 0],'S',sym(1))
+chainS.genlattice('lat_const', [3 8 8])
+chainS.addatom('r', [0 0 0], 'S', sym(1))
 chainS.gencoupling;
-chainS.addmatrix('label','J1')
-chainS.addmatrix('label','J2')
-chainS.addcoupling('mat','J1','bond',1);
-chainS.addcoupling('mat','J2','bond',2);
-chainS.genmagstr('mode','helical','k',sym([1/2 0 0]),'nExt',[2 1 1],'n',sym([0 0 1]),'S',sym([0 1 0])');
+chainS.addmatrix('label', 'J1')
+chainS.addmatrix('label', 'J2')
+chainS.addcoupling('mat', 'J1', 'bond', 1);
+chainS.addcoupling('mat', 'J2', 'bond', 2);
+chainS.genmagstr('mode', 'helical', 'k', sym([1/2 0 0]), 'nExt',[2 1 1], 'n', sym([0 0 1]), 'S', sym([0 1 0])');
 chSpecSym = chainS.spinwave;</code>
             </pre>
         </figure>
@@ -1655,6 +1698,19 @@ ezplot(real(omega1),[0 1])</code>
         display:inline;
     }
 </style>
+
+</section>
+<section>
+
+    <section class="subsection color--radiant" id="allFns">
+        <div class="grid-wrapper">
+            <div class="logo"></div>
+            <h1>Available functions</h1>
+            <div class="description">
+                Reference list of all available functions.
+            </div>
+        </div>
+    </section>
 
 <section class="code color--light" id="methods">
     <div class="grid-wrapper">
@@ -1796,4 +1852,5 @@ ezplot(real(omega1),[0 1])</code>
             </ul>
         </content>
     </div>
+</section>
 </section>

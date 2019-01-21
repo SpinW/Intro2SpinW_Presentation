@@ -29,9 +29,9 @@
 <div class="reveal pattern--fire-side">
 	<div class="slides">
 		<!--<section data-external="parts/intro.html"> </section>-->
-        <section data-external="parts/intro.html"> </section>
-		<section data-external="parts/slides.html"> </section>
-        <!--<section data-external="parts/other.html"> </section>-->
+        <section data-external-replace="parts/intro.html"> </section>
+		<section data-external-replace="parts/slides.html"> </section>
+		<section data-external-replace="parts/example.html"> </section>
 	</div>
 </div>
 
@@ -50,22 +50,6 @@
 		minScale: 1,
 		maxScale: 1,
 		history: true,
-		// anything: [
-		// 	{
-		// 		className: "anything",
-		// 		initialize: (function(container, options){ if (options && options.initialize) { options.initialize(container)} })
-		// 	},
-		// 	{
-		// 		className: "chart",
-		// 		initialize: (function(container, options){ container.chart = new Chart(container.getContext("2d"), options);  })
-		// 	},
-		// 	{
-		// 		className: "plot",
-		// 		defaults: {width:500, height: 500, grid:true},
-		// 		initialize: (function(container, options){ options.target = "#"+container.id; functionPlot(options) })
-		// 	},
-		// 	// ...
-		// ],
 		math: {
 			// mathjax: 'node_modules/mathjax/MathJax.js' //offline local
 			mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js'
@@ -79,7 +63,8 @@
 				}
 			},
 			{ src: 'presentation_base/plugin/notes/notes.js', async: true },
-			{ src: 'presentation_base/plugin/highlight/highlight.js',
+			{
+				src: 'presentation_base/plugin/highlight/highlight.js',
 				async: true,
 				condition: function () {
 					// Trim whitespace from code blocks, and prevent HTML escaping by default.
@@ -95,27 +80,18 @@
 								}
 							}
 					);
-					Array.prototype.forEach.call(
-							document.querySelectorAll('pre Acode'),
-							function (element) {
-								if (!element.hasAttribute('data-notrim')) {
-									element.setAttribute('data-trim', '');
-								}
-								if (!element.hasAttribute('data-escape')) {
-									element.setAttribute('data-noescape', '');
-								}
-							}
-					);
 					return true;
 				},
 				callback: function () {
 					hljs.initHighlightingOnLoad();
+					var content_div = document.getElementById("edit");
+					content_div.addEventListener("blur", function() {
+						hljs.highlightBlock(document.getElementById("codeblock"));
+					})
 				}
 			},
 			{ src: 'presentation_base/js/jquery-3.3.1.min.js' },
 			{ src: 'presentation_base/plugin/function-plot/site/js/vendor/d3.js' },
-			// { src: 'presentation_base/plugin/function-plot/dist/function-plot.js' },
-			// { src: 'presentation_base/plugin/anything/anything.js' },
 			{ src: 'presentation_base/plugin/markdown/marked.js' },
 			{ src: 'presentation_base/plugin/markdown/markdown.js'},
 
@@ -237,88 +213,6 @@
 		},
 
 	},);
-</script>
-<script>
-    Reveal.addEventListener( 'myslide1', function() {
-
-        var margin = {top: 100, right: 100, bottom: 100, left: 100},
-            width = 600 - margin.left - margin.right,
-            height = 400 - margin.top - margin.bottom;
-        var x = d3.scale.ordinal()
-            .rangeRoundBands([0, width], .1);
-        var y0 = d3.scale.linear().domain([300, 1100]).range([height, 0]),
-            y1 = d3.scale.linear().domain([20, 80]).range([height, 0]);
-        var xAxis = d3.svg.axis()
-            .scale(x)
-            .orient("bottom");
-// create left yAxis
-        var yAxisLeft = d3.svg.axis().scale(y0).ticks(4).orient("left");
-// create right yAxis
-        var yAxisRight = d3.svg.axis().scale(y1).ticks(6).orient("right");
-
-        d3.select("#slide1d3container").selectAll("svg").remove();
-
-        var svg = d3.select("#slide1d3container").append("svg")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom)
-            .append("g")
-            .attr("class", "graph")
-            .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-
-
-        d3.tsv("data.tsv", type, function(error, data) {
-            x.domain(data.map(function(d) { return d.year; }));
-            y0.domain([0, d3.max(data, function(d) { return d.money; })]);
-
-            svg.append("g")
-                .attr("class", "x axis")
-                .attr("transform", "translate(0," + height + ")")
-                .call(xAxis);
-
-            svg.append("g")
-                .attr("class", "y axis axisLeft")
-                .attr("transform", "translate(0,0)")
-                .call(yAxisLeft)
-                .append("text")
-                .attr("y", 6)
-                .attr("dy", "-2em")
-                .style("text-anchor", "end")
-                .style("text-anchor", "end")
-                .text("Dollars");
-
-            svg.append("g")
-                .attr("class", "y axis axisRight")
-                .attr("transform", "translate(" + (width) + ",0)")
-                .call(yAxisRight)
-                .append("text")
-                .attr("y", 6)
-                .attr("dy", "-2em")
-                .attr("dx", "2em")
-                .style("text-anchor", "end")
-                .text("#");
-
-            bars = svg.selectAll(".bar").data(data).enter();
-
-            bars.append("rect")
-                .attr("class", "bar1")
-                .attr("x", function(d) { return x(d.year); })
-                .attr("width", x.rangeBand()/2)
-                .attr("y", function(d) { return y0(d.money); })
-                .attr("height", function(d,i,j) { return height - y0(d.money); });
-
-            bars.append("rect")
-                .attr("class", "bar2")
-                .attr("x", function(d) { return x(d.year) + x.rangeBand()/2; })
-                .attr("width", x.rangeBand() / 2)
-                .attr("y", function(d) { return y1(d.number); })
-                .attr("height", function(d,i,j) { return height - y1(d.number); });
-        });
-        function type(d) {
-            d.money = +d.money;
-            return d;80
-        }
-
-    } );
 </script>
 </body>
 </html>

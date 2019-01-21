@@ -289,34 +289,6 @@ obj.genlattice('lat_const',[3 3 4], 'sym', 1,'angled',[90 90 120]);
     </div>
 </section>
 
-<section class="blank" id="transformations">
-    <div class="grid-wrapper">
-        <div class="header">
-            <div class="logo"></div>
-            <div class="section"> SpinW Class </div>
-        </div>
-        <content>
-        <p>We have three types of tensor variable: <b>polar vector, axial vector, 2d tensors.</b></p>
-            <p>The respective transformation rules using orthogonal matrices are:</p>
-            \[\begin{aligned}
-            \nu^{'} &amp; = R\nu \\
-            \nu^{'} &amp; = \det(R)R\nu \\
-            T^{'} &amp; = RTR^{T}
-            \end{aligned} \]
-            <p>Where $\nu$ is a column vector.</p>
-            <p>To generate transformation matrices use:</p>
-            Rotation:
-            <figure class="code">
-                <pre><code class="matlab"> R = sw_rotmat(rotAxis, rotAngle);</code></pre>
-            </figure>
-            Mirroring:
-            <figure class="code">
-                <pre><code class="matlab">[~, R] = sw_mirror(normalAxis);</code></pre>
-            </figure>
-        </content>
-    </div>
-</section>
-
 <section class="blank" id="unit_cell">
     <div class="grid-wrapper">
         <div class="header">
@@ -438,6 +410,20 @@ obj.genlattice('lat_const',[3 3 4], 'sym', 1,'angled',[90 90 120]);
         </content>
     </div>
 </section>
+    <section class="blank" id="sym">
+        <div class="grid-wrapper">
+            <div class="header">
+                <div class="logo"></div>
+                <div class="section">All other symmetry information</div>
+            </div>
+            <content>
+                <h1 style="text-align: center">This will be covered in the symmetry presentation.<br><br>
+                    <a href="http://www.spinw.org/SymmetryInSpinW" target="_blank"> Symmetry Presentation</a></h1>
+            </content>
+        </div>
+    </section>
+
+
 </section>
 <section>
     <section class="subsection color--radiant" id="sw_matrixHead">
@@ -1590,36 +1576,6 @@ cryst.addcoupling(‘mat’,'D',’bond’,1);
         </content>
     </div>
 </section>
-<section class="code color--light" id="SymmetryAnalysis">
-    <div class="grid-wrapper">
-        <div class="header">
-            <div class="logo"></div>
-            <div class="section">Symmetry Analysis</div>
-        </div>
-        <content>
-            <p>Determine the symmetry allowed elements of the matrices with <code>spinw.getmatrix</code> or <code>spinw.setmatrix</code>.
-                <br>Most common usage settings:</p>
-            <p>Text output of the possible modes.</p>
-            <figure class="code">
-                <pre>
-                    <code class="lang-matlab">spinw.getmatrix(‘mat’,’J1’);</code>
-                </pre>
-            </figure>
-            <p>Matrix output of the possible modes, D: [3 3 nModes].</p>
-            <figure class="code">
-                <pre>
-<code class="lang-matlab">normModes = spinw.getmatrix(‘mat’,’J1’);</code>
-                </pre>
-            </figure>
-            <p>Assigning pre-factors for the calculated modes and save them into the <code>J1</code> matrix</p>
-            <figure class="code">
-                <pre>
-<code class="lang-matlab">spinw.setmatrix(‘mat’,’J1’,’pref’,P1);</code>
-                </pre>
-            </figure>
-        </content>
-    </div>
-</section>
 
 </section>
 <section>
@@ -1662,25 +1618,31 @@ chSpecSym = chainS.spinwave;</code>
     </div>
 </section>
 
-<section class="code color--light" id="symbolic2">
-    <div class="grid-wrapper">
-        <div class="header">
-            <div class="logo"></div>
-            <div class="section">Symbolic calculation example</div>
-        </div>
-        <content>
-        <figure class="code">
+    <section class="showit" id="symbolic2">
+        <div class="grid-wrapper">
+            <div class="header">
+                <div class="logo"></div>
+                <div class="section">Symbolic calculation example</div>
+            </div>
+            <content>
+                <div class="profile">
+                    <div class="basics">
+                        <img src="plots/symbolicChain.png"/>
+                    </div>
+                    <div class="details">
+                        <p>To generate the dispersion</p>
+                        <figure class="code">
             <pre>
                 <code class="lang-matlab">syms('J1','J2');
 omega1 = subs(chSpecSym.omega(1),[J1 J2],[1 0.2]);
 ezplot(real(omega1),[0 1])</code>
             </pre>
-        </figure>
-        <!--TODO Add a picture-->
-        </content>
-    </div>
-</section>
-
+                        </figure>
+                    </div>
+                </div>
+            </content>
+        </div>
+    </section>
 
 <style>
     #double li  {
